@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Magdarie van Staden — Yoga &amp; Mindfulness · Durban, KZN</title>
+<meta name="description" content="Trauma-informed yoga and mindfulness with Magdarie van Staden. Practice, events &amp; retreats, teacher training and corporate wellness in Westville &amp; Upper Highway, KZN.">
+<link rel="icon" type="image/svg+xml" href="assets/enso.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=Sacramento&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest:   #465447;
+    --charcoal: #353d35;
+    --orange:   #b45c1d;
+    --moss:     #7a8c75;
+    --sand:     #eae6d9;
+    --cream:    #fdf7e2;
+    --grey:     #474a4c;
+    --teal:     #2e7f7f;
+    --ink:      #2a2e2a;
+    --white:    #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 40px; }
+
+  .eyebrow {
+    font-size: 10px; font-weight: 600; letter-spacing: 0.3em;
+    text-transform: uppercase; color: var(--moss);
+  }
+
+  h2.section-title {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 30px; font-weight: 700; color: var(--charcoal);
+    line-height: 1.25; margin: 14px 0 0;
+  }
+  h2.section-title em { font-style: italic; font-weight: 400; color: var(--forest); }
+
+  /* ─── NAV ─── */
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(253,247,226,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(70,84,71,0.12);
+  }
+  .nav-inner {
+    max-width: 1180px; margin: 0 auto; padding: 12px 40px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .brand-logo { height: 38px; width: auto; display: block; }
+  .nav-links { display: flex; gap: 30px; align-items: center; }
+  .nav-links a {
+    font-size: 12px; font-weight: 500; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--forest); transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--orange); }
+  .nav-cta {
+    background: var(--forest); color: var(--cream) !important;
+    padding: 9px 20px; border-radius: 24px; font-size: 11px !important;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--charcoal); }
+  @media (max-width: 860px) { .nav-links a:not(.nav-cta) { display: none; } }
+
+  /* ─── HERO ─── */
+  .hero {
+    position: relative; overflow: hidden;
+    display: grid; grid-template-columns: 1.05fr 0.95fr; align-items: stretch;
+    min-height: 560px;
+    background:
+      radial-gradient(circle at 80% 30%, rgba(122,140,117,0.18), transparent 45%),
+      var(--cream);
+  }
+  .hero-content { padding: 92px 56px 92px 0; max-width: 620px; margin-left: auto; align-self: center; }
+  .hero h1 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 50px; font-weight: 700; color: var(--charcoal);
+    line-height: 1.14; letter-spacing: -0.01em; margin: 22px 0 26px;
+  }
+  .hero h1 em { font-style: italic; font-weight: 400; color: var(--forest); }
+  .hero-content p { font-size: 17px; color: var(--ink); margin-bottom: 36px; }
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+  .hero-photo {
+    background: url('assets/yoga-balance.jpg') center 20%/cover no-repeat;
+    position: relative;
+  }
+  .hero-photo::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(105deg, var(--cream) 0%, rgba(253,247,226,0.25) 22%, transparent 55%);
+  }
+  @media (max-width: 820px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-content { padding: 60px 0 28px; max-width: 100%; }
+    .wrap.hero-wrap { padding-top: 0; padding-bottom: 0; }
+    .hero-photo { min-height: 320px; }
+    .hero h1 { font-size: 38px; }
+  }
+
+  .btn {
+    display: inline-block; padding: 14px 30px; border-radius: 28px;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+    transition: all 0.2s; cursor: pointer; border: 1.5px solid transparent;
+  }
+  .btn-primary { background: var(--forest); color: var(--cream); }
+  .btn-primary:hover { background: var(--charcoal); transform: translateY(-1px); }
+  .btn-ghost { background: transparent; color: var(--forest); border-color: rgba(70,84,71,0.35); }
+  .btn-ghost:hover { border-color: var(--orange); color: var(--orange); }
+
+  .stripe { height: 4px; background: linear-gradient(to right, var(--forest) 0%, var(--moss) 35%, var(--teal) 55%, var(--orange) 80%, var(--sand) 100%); }
+
+  /* ─── OFFERING TILES (reference look) ─── */
+  .offerings { padding: 84px 0 88px; }
+  .offer-head { max-width: 620px; margin-bottom: 44px; }
+  .offer-head p { margin-top: 16px; color: rgba(42,46,42,0.7); }
+  .tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  @media (max-width: 900px) { .tiles { grid-template-columns: repeat(2,1fr); } }
+  @media (max-width: 520px) { .tiles { grid-template-columns: 1fr; } }
+  .tile {
+    position: relative; aspect-ratio: 5/7; border-radius: 10px; overflow: hidden;
+    display: flex; flex-direction: column; justify-content: space-between;
+    padding: 26px 22px; text-align: center; color: var(--white);
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+  .tile:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(53,61,53,0.22); }
+  .tile-bg { position: absolute; inset: 0; background-size: cover; background-position: center; z-index: 0; }
+  .tile-tint { position: absolute; inset: 0; z-index: 1; mix-blend-mode: multiply; }
+  .tile > * { position: relative; z-index: 2; }
+  .tile-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.32em; text-transform: uppercase; color: rgba(255,255,255,0.9); }
+  .tile-title { font-family: 'Libre Baskerville', serif; font-size: 30px; font-weight: 400; line-height: 1.12; }
+  .tile-sign { font-family: 'Sacramento', cursive; font-size: 30px; line-height: 1; color: rgba(255,255,255,0.92); }
+
+  /* ─── SCHEDULE ─── */
+  .schedule { padding: 84px 0; background: var(--sand); }
+  .sched-head { text-align: center; max-width: 600px; margin: 0 auto 44px; }
+  .sched-head p { margin-top: 14px; color: rgba(42,46,42,0.7); }
+  .sched-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; }
+  @media (max-width: 900px) { .sched-grid { grid-template-columns: repeat(2,1fr); } }
+  @media (max-width: 520px) { .sched-grid { grid-template-columns: 1fr; } }
+  .day {
+    background: var(--white); border: 1px solid rgba(70,84,71,0.1);
+    border-radius: 12px; padding: 18px 14px; min-height: 150px;
+  }
+  .day-name { font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); padding-bottom: 12px; border-bottom: 1px solid rgba(70,84,71,0.1); margin-bottom: 12px; }
+  .slot { margin-bottom: 12px; }
+  .slot:last-child { margin-bottom: 0; }
+  .slot .time { font-size: 12px; font-weight: 600; color: var(--charcoal); }
+  .slot .cls { font-size: 12px; color: rgba(42,46,42,0.62); line-height: 1.4; }
+  .slot .loc { font-size: 10px; color: var(--moss); letter-spacing: 0.04em; }
+  .day-rest { font-family: 'Libre Baskerville', serif; font-style: italic; font-size: 13px; color: rgba(42,46,42,0.4); }
+  .sched-foot { text-align: center; margin-top: 32px; }
+
+  /* ─── EVENTS ─── */
+  .events { padding: 88px 0; }
+  .events-head { max-width: 620px; margin-bottom: 44px; }
+  .events-head p { margin-top: 16px; color: rgba(42,46,42,0.7); }
+  .event-list { display: flex; flex-direction: column; gap: 16px; }
+  .event {
+    display: grid; grid-template-columns: 120px 1fr auto; gap: 28px; align-items: center;
+    background: var(--white); border: 1px solid rgba(70,84,71,0.1);
+    border-radius: 14px; padding: 26px 30px; transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .event:hover { box-shadow: 0 12px 30px rgba(53,61,53,0.09); transform: translateY(-2px); }
+  @media (max-width: 720px) { .event { grid-template-columns: 1fr; gap: 14px; text-align: left; } }
+  .event-date { text-align: center; }
+  @media (max-width: 720px) { .event-date { text-align: left; } }
+  .event-date .month { font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--orange); }
+  .event-date .day-num { font-family: 'Cormorant Garamond', serif; font-size: 46px; font-weight: 300; color: var(--charcoal); line-height: 1; }
+  .event-date .yr { font-size: 11px; color: var(--moss); letter-spacing: 0.1em; }
+  .event-info .tag { font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); }
+  .event-info h3 { font-family: 'Libre Baskerville', serif; font-size: 21px; font-weight: 700; color: var(--charcoal); margin: 6px 0 5px; }
+  .event-info h3 em { font-style: italic; font-weight: 400; color: var(--forest); }
+  .event-info p { font-size: 13px; color: rgba(42,46,42,0.6); }
+  .event-info .meta { font-size: 12px; color: var(--moss); margin-top: 6px; }
+
+  /* ─── PHILOSOPHY ─── */
+  .philosophy {
+    padding: 100px 0; text-align: center; position: relative; overflow: hidden;
+    background: var(--forest); color: var(--sand);
+  }
+  .philosophy .pe2 { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 460px; opacity: 0.10; }
+  .philosophy .inner { position: relative; max-width: 760px; margin: 0 auto; }
+  .philosophy .eyebrow { color: var(--moss); }
+  .philosophy blockquote {
+    font-family: 'Libre Baskerville', serif; font-size: 29px; line-height: 1.5;
+    color: var(--sand); margin: 22px 0 0; font-weight: 400;
+  }
+  .philosophy blockquote em { font-style: italic; color: var(--white); }
+  .philosophy .attr { margin-top: 28px; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(234,230,217,0.6); }
+
+  /* ─── COMMUNITY ─── */
+  .community { padding: 88px 0; }
+  .community-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; }
+  @media (max-width: 800px) { .community-grid { grid-template-columns: 1fr; gap: 40px; } }
+  .community-body p { margin-top: 16px; color: var(--ink); max-width: 460px; }
+  .socials { margin-top: 26px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 460px; }
+  @media (max-width: 460px) { .socials { grid-template-columns: 1fr; } }
+  .social {
+    display: flex; align-items: center; gap: 12px; padding: 13px 16px;
+    background: var(--sand); border: 1px solid rgba(70,84,71,0.12); border-radius: 12px;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .social:hover { background: var(--cream); transform: translateY(-2px); border-color: rgba(180,92,29,0.3); }
+  .social svg { width: 20px; height: 20px; flex-shrink: 0; fill: var(--forest); }
+  .social .lbl { font-size: 13px; font-weight: 500; color: var(--charcoal); line-height: 1.2; }
+  .social .lbl small { display: block; font-size: 10px; font-weight: 400; color: var(--moss); letter-spacing: 0.02em; }
+
+  .signup { background: var(--white); border: 1px solid rgba(70,84,71,0.12); border-radius: 16px; padding: 36px 34px; }
+  .signup h3 { font-family: 'Libre Baskerville', serif; font-size: 22px; font-weight: 700; color: var(--charcoal); }
+  .signup h3 em { font-style: italic; font-weight: 400; color: var(--forest); }
+  .signup p { font-size: 14px; color: rgba(42,46,42,0.65); margin: 10px 0 22px; }
+  .field { display: flex; flex-direction: column; gap: 10px; }
+  .field input {
+    padding: 14px 18px; border-radius: 28px; border: 1px solid rgba(70,84,71,0.25);
+    font-family: 'Inter', sans-serif; font-size: 14px; background: var(--cream); color: var(--ink);
+  }
+  .field input:focus { outline: none; border-color: var(--teal); }
+  .field button { border: none; }
+  .signup .fineprint { font-size: 11px; color: rgba(42,46,42,0.45); margin-top: 14px; }
+
+  /* ─── FOOTER ─── */
+  .footer { background: var(--charcoal); color: var(--sand); padding: 56px 0 36px; }
+  .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; }
+  @media (max-width: 700px) { .footer-grid { grid-template-columns: 1fr; gap: 30px; } }
+  .footer-logo { height: 40px; width: auto; margin-bottom: 14px; filter: brightness(0) invert(1) sepia(0.15); }
+  .footer-tag { font-family: 'Libre Baskerville', serif; font-style: italic; font-size: 14px; color: rgba(234,230,217,0.75); max-width: 320px; }
+  .footer h4 { font-size: 10px; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase; color: var(--moss); margin-bottom: 16px; }
+  .footer ul { list-style: none; }
+  .footer ul li { margin-bottom: 10px; font-size: 14px; color: rgba(234,230,217,0.75); }
+  .footer ul li a:hover { color: var(--orange); }
+  .footer-bottom {
+    margin-top: 44px; padding-top: 22px; border-top: 1px solid rgba(234,230,217,0.12);
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    font-size: 11px; letter-spacing: 0.05em; color: rgba(234,230,217,0.45);
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#top" aria-label="Magdarie van Staden home">
+      <img class="brand-logo" src="assets/logo.png" alt="Magdarie van Staden">
+    </a>
+    <div class="nav-links">
+      <a href="#practice">Practice</a>
+      <a href="#events">Events</a>
+      <a href="#corporate">Corporate</a>
+      <a href="#about">About</a>
+      <a href="#community" class="nav-cta">Get in touch</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<header class="hero" id="top">
+  <div class="hero-photo"></div>
+  <div class="hero-content" style="padding-left:40px;">
+    <div class="eyebrow">Yoga &amp; Mindfulness · Durban, KZN</div>
+    <h1>You have infinite capacity to create your <em>most inspired life.</em></h1>
+    <p>A space to explore your inner landscape through movement, breath and meditation — trauma-informed, unrushed, and accessible to all levels. Come back to a felt sense in the body.</p>
+    <div class="hero-actions">
+      <a href="#schedule" class="btn btn-primary">View the schedule</a>
+      <a href="#practice" class="btn btn-ghost">Explore offerings</a>
+    </div>
+  </div>
+</header>
+
+<div class="stripe"></div>
+
+<!-- ═══ OFFERING TILES ═══ -->
+<section class="offerings" id="practice">
+  <div class="wrap">
+    <div class="offer-head">
+      <div class="eyebrow">What's offered</div>
+      <h2 class="section-title">Four ways to <em>practice and grow.</em></h2>
+      <p>From steady, ongoing practice to deep immersive retreats, teacher training and wellbeing for teams — a path for wherever you are, accessible to all levels.</p>
+    </div>
+    <div class="tiles">
+
+      <a href="#schedule" class="tile">
+        <div class="tile-bg" style="background-image:url('assets/yoga-standing.jpg');"></div>
+        <div class="tile-tint" style="background:var(--forest);"></div>
+        <div class="tile-eyebrow">The Practice</div>
+        <div class="tile-title">Yoga<br>Classes</div>
+        <div class="tile-sign">Magdarie</div>
+      </a>
+
+      <a href="#events" class="tile">
+        <div class="tile-bg" style="background-image:url('assets/yoga-balance.jpg');"></div>
+        <div class="tile-tint" style="background:var(--orange);"></div>
+        <div class="tile-eyebrow">The Process</div>
+        <div class="tile-title">Retreats &amp;<br>Events</div>
+        <div class="tile-sign">Magdarie</div>
+      </a>
+
+      <a href="#events" class="tile">
+        <div class="tile-bg" style="background-image:url('assets/yoga-arm.jpg');"></div>
+        <div class="tile-tint" style="background:var(--teal);"></div>
+        <div class="tile-eyebrow">The Path</div>
+        <div class="tile-title">Teacher<br>Training</div>
+        <div class="tile-sign">Magdarie</div>
+      </a>
+
+      <a href="#corporate" class="tile">
+        <div class="tile-bg" style="background-image:url('assets/yoga-standing.jpg'); background-position:center 30%;"></div>
+        <div class="tile-tint" style="background:var(--charcoal);"></div>
+        <div class="tile-eyebrow">The Workplace</div>
+        <div class="tile-title">Corporate<br>Wellness</div>
+        <div class="tile-sign">Magdarie</div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WEEKLY SCHEDULE ═══ -->
+<section class="schedule" id="schedule">
+  <div class="wrap">
+    <div class="sched-head">
+      <div class="eyebrow">This week</div>
+      <h2 class="section-title">Weekly <em>class schedule.</em></h2>
+      <p>A steady rhythm of practice across Westville and Upper Highway — drop in, or commit to a regular slot. All levels welcome.</p>
+    </div>
+    <div class="sched-grid">
+      <div class="day">
+        <div class="day-name">Mon</div>
+        <div class="slot"><div class="time">06:00</div><div class="cls">Vinyasa Flow</div><div class="loc">Westville</div></div>
+        <div class="slot"><div class="time">17:30</div><div class="cls">Hatha</div><div class="loc">Upper Highway</div></div>
+      </div>
+      <div class="day">
+        <div class="day-name">Tue</div>
+        <div class="slot"><div class="time">06:00</div><div class="cls">Slow Flow</div><div class="loc">Online</div></div>
+        <div class="slot"><div class="time">18:00</div><div class="cls">Yin</div><div class="loc">Westville</div></div>
+      </div>
+      <div class="day">
+        <div class="day-name">Wed</div>
+        <div class="slot"><div class="time">06:00</div><div class="cls">Vinyasa Flow</div><div class="loc">Upper Highway</div></div>
+        <div class="slot"><div class="time">09:00</div><div class="cls">Gentle / Restorative</div><div class="loc">Westville</div></div>
+      </div>
+      <div class="day">
+        <div class="day-name">Thu</div>
+        <div class="slot"><div class="time">06:00</div><div class="cls">Somatic Movement</div><div class="loc">Online</div></div>
+        <div class="slot"><div class="time">17:30</div><div class="cls">Hatha</div><div class="loc">Westville</div></div>
+      </div>
+      <div class="day">
+        <div class="day-name">Fri</div>
+        <div class="slot"><div class="time">06:00</div><div class="cls">Vinyasa Flow</div><div class="loc">Westville</div></div>
+        <div class="slot"><div class="time">17:00</div><div class="cls">Yin &amp; Sound</div><div class="loc">Upper Highway</div></div>
+      </div>
+      <div class="day">
+        <div class="day-name">Sat</div>
+        <div class="slot"><div class="time">07:30</div><div class="cls">Extended Practice</div><div class="loc">Westville</div></div>
+      </div>
+      <div class="day">
+        <div class="day-name">Sun</div>
+        <div class="day-rest">Rest &amp; restore.</div>
+      </div>
+    </div>
+    <div class="sched-foot">
+      <a href="#community" class="btn btn-primary">Book a class</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ EVENTS / RETREATS / TRAININGS ═══ -->
+<section class="events" id="events">
+  <div class="wrap">
+    <div class="events-head">
+      <div class="eyebrow">On the horizon</div>
+      <h2 class="section-title">Upcoming events, retreats <em>&amp; trainings.</em></h2>
+      <p>Time set aside, deliberately — immersive experiences that invite you to step out of the everyday and into shared practice and reset.</p>
+    </div>
+    <div class="event-list">
+
+      <div class="event">
+        <div class="event-date"><div class="month">Jul</div><div class="day-num">12</div><div class="yr">2026</div></div>
+        <div class="event-info">
+          <div class="tag">Retreat</div>
+          <h3>Winter Reset <em>— Drakensberg</em></h3>
+          <p>A three-day mountain retreat — slow mornings, strong practice, sound baths and space to exhale.</p>
+          <div class="meta">3 nights · Champagne Valley, KZN · 10 spaces</div>
+        </div>
+        <a href="#community" class="btn btn-ghost">Enquire</a>
+      </div>
+
+      <div class="event">
+        <div class="event-date"><div class="month">Aug</div><div class="day-num">02</div><div class="yr">2026</div></div>
+        <div class="event-info">
+          <div class="tag">Training</div>
+          <h3>200-Hour <em>Hatha Teacher Training</em></h3>
+          <p>Part-time, weekend-based training rooted in tradition and the 8 limbs of yoga. Study, refine, or learn to teach.</p>
+          <div class="meta">Starts Aug 2026 · Westville · Part-time</div>
+        </div>
+        <a href="#community" class="btn btn-ghost">Apply</a>
+      </div>
+
+      <div class="event">
+        <div class="event-date"><div class="month">Aug</div><div class="day-num">23</div><div class="yr">2026</div></div>
+        <div class="event-info">
+          <div class="tag">Workshop</div>
+          <h3>Extended Practice <em>&amp; Sound Bath</em></h3>
+          <p>Some practices can't be rushed — an unrushed three-hour deep dive, closing in stillness and sound.</p>
+          <div class="meta">3 hours · Upper Highway · 16 spaces</div>
+        </div>
+        <a href="#community" class="btn btn-ghost">Book</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PHILOSOPHY ═══ -->
+<section class="philosophy" id="about">
+  <img class="pe2" src="assets/enso.svg" alt="" aria-hidden="true" style="filter:brightness(0) invert(1);">
+  <div class="inner">
+    <div class="eyebrow">About Mags</div>
+    <blockquote>Some practices <em>can't be rushed.</em> With over ten years of teaching, Mags holds a trauma-informed space to rest, connect, get clear — and become still.</blockquote>
+    <div class="attr">500hr Facilitator · Effort &amp; ease · Rooted in tradition</div>
+  </div>
+</section>
+
+<!-- ═══ CORPORATE ═══ -->
+<section class="community" id="corporate" style="background:var(--sand);">
+  <div class="wrap community-grid">
+    <div class="community-body">
+      <div class="eyebrow">For teams</div>
+      <h2 class="section-title">Corporate <em>wellness.</em></h2>
+      <p>On-site or online yoga, guided meditations and conscious-leadership experiences for teams — designed to reduce strain, sharpen focus, and support clarity, regulation and human connection at work.</p>
+      <div class="hero-actions" style="margin-top:24px;">
+        <a href="#community" class="btn btn-primary">Enquire for your team</a>
+      </div>
+    </div>
+    <div style="border-radius:16px; overflow:hidden; aspect-ratio:4/3; background:url('assets/yoga-arm.jpg') center/cover;"></div>
+  </div>
+</section>
+
+<!-- ═══ COMMUNITY ═══ -->
+<section class="community" id="community">
+  <div class="wrap community-grid">
+    <div class="community-body">
+      <div class="eyebrow">Stay connected</div>
+      <h2 class="section-title">Join a community <em>rooted in practice.</em></h2>
+      <p>Gentle reminders, new class times, retreat dates and reflections — sent only when there's something worth sharing. No noise, no pressure.</p>
+      <div class="socials">
+        <a class="social" href="https://chat.whatsapp.com/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3 0-1.5.8-2.2 1-2.5.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.3.3c-.2.2-.4.4-.2.7.2.4.9 1.4 1.9 2.3 1.3 1.1 2.3 1.5 2.7 1.6.2.1.5.1.7-.1l.7-.9c.2-.3.4-.2.7-.1l2 .9c.3.2.5.2.5.4.1.2.1.7-.1 1.3Z"/></svg>
+          <span class="lbl">WhatsApp Group<small>Inspired community chat</small></span>
+        </a>
+        <a class="social" href="https://whatsapp.com/channel/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3 0-1.5.8-2.2 1-2.5.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.3.3c-.2.2-.4.4-.2.7.2.4.9 1.4 1.9 2.3 1.3 1.1 2.3 1.5 2.7 1.6.2.1.5.1.7-.1l.7-.9c.2-.3.4-.2.7-.1l2 .9c.3.2.5.2.5.4.1.2.1.7-.1 1.3Z"/></svg>
+          <span class="lbl">WhatsApp Channel<small>Broadcast updates</small></span>
+        </a>
+        <a class="social" href="https://instagram.com/magdarievanstadenyoga" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4 1.3-.1 1.7-.1 4.9-.1Zm0 1.8c-3.1 0-3.5 0-4.8.1-1.1 0-1.7.2-2.1.4-.5.2-.9.4-1.3.8-.4.4-.6.8-.8 1.3-.2.4-.3 1-.4 2.1-.1 1.3-.1 1.7-.1 4.8s0 3.5.1 4.8c0 1.1.2 1.7.4 2.1.2.5.4.9.8 1.3.4.4.8.6 1.3.8.4.2 1 .3 2.1.4 1.3.1 1.7.1 4.8.1s3.5 0 4.8-.1c1.1 0 1.7-.2 2.1-.4.5-.2.9-.4 1.3-.8.4-.4.6-.8.8-1.3.2-.4.3-1 .4-2.1.1-1.3.1-1.7.1-4.8s0-3.5-.1-4.8c0-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.3-.4-.4-.8-.6-1.3-.8-.4-.2-1-.3-2.1-.4-1.3-.1-1.7-.1-4.8-.1Zm0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8Zm0 1.8a3.1 3.1 0 1 0 0 6.2 3.1 3.1 0 0 0 0-6.2Zm5.1-2.9a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3Z"/></svg>
+          <span class="lbl">Instagram<small>@magdarievanstadenyoga</small></span>
+        </a>
+        <a class="social" href="https://youtube.com/@magdarievanstadenyoga" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M23 7.5a3 3 0 0 0-2.1-2.1C19 4.9 12 4.9 12 4.9s-7 0-8.9.5A3 3 0 0 0 1 7.5C.5 9.4.5 12 .5 12s0 2.6.5 4.5a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-4.5.5-4.5s0-2.6-.5-4.5ZM9.8 15.3V8.7l5.7 3.3-5.7 3.3Z"/></svg>
+          <span class="lbl">YouTube<small>Practice with Mags</small></span>
+        </a>
+      </div>
+    </div>
+    <form class="signup" action="https://YOUR-MAILCHIMP-FORM-URL" method="post" target="_blank" novalidate>
+      <h3>Join the <em>newsletter.</em></h3>
+      <p>Add your details and I'll send you what's coming up next.</p>
+      <div class="field">
+        <input type="text" name="FNAME" placeholder="Your name" aria-label="Your name" required>
+        <input type="email" name="EMAIL" placeholder="Email address" aria-label="Email address" required>
+        <button type="submit" class="btn btn-primary">Join the newsletter</button>
+      </div>
+      <div class="fineprint">Powered by Mailchimp · unsubscribe anytime. Your details stay private.</div>
+    </form>
+  </div>
+</section>
+
+<div class="stripe"></div>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <img class="footer-logo" src="assets/logo.png" alt="Magdarie van Staden">
+        <div class="footer-tag">You have infinite capacity to create your most inspired life.</div>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#practice">Practice</a></li>
+          <li><a href="#events">Events &amp; Retreats</a></li>
+          <li><a href="#corporate">Corporate</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://instagram.com/magdarievanstadenyoga">@magdarievanstadenyoga</a></li>
+          <li><a href="#community">WhatsApp &amp; YouTube</a></li>
+          <li>Westville + Upper Highway</li>
+          <li>KZN, South Africa</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Magdarie van Staden · Yoga &amp; Mindfulness</div>
+      <div>500hr Trauma-Informed Facilitator · Durban, KZN</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
