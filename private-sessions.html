@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Private Sessions — Magdarie van Staden Yoga · Durban, KZN</title>
+<meta name="description" content="One-to-one trauma-informed yoga with Magdarie van Staden — in person or online. Begin with a short intake assessing your lifestyle, work, movement, health and goals, then book a discovery call.">
+<link rel="icon" type="image/svg+xml" href="assets/enso.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Hanken+Grotesk:wght@300;400;500;600;700&family=Oooh+Baby&display=swap" rel="stylesheet">
+<style>
+  :root { --forest:#465447; --charcoal:#353d35; --moss:#7a8c75; --sand:#eae6d9; --grey:#474a4c; --paper:#f4f1e7; --clay:#c06849; --clay-dk:#9e4f34; --ink:#2a2e2a; --white:#fff; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'Hanken Grotesk',sans-serif; background:var(--paper); color:var(--ink); font-size:15px; line-height:1.75; -webkit-font-smoothing:antialiased; }
+  a { color:inherit; text-decoration:none; }
+  .wrap { max-width:1180px; margin:0 auto; padding:0 40px; }
+  .wrap-narrow { max-width:760px; margin:0 auto; padding:0 40px; }
+  .grain::before { content:''; position:absolute; inset:0; z-index:3; pointer-events:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity:0.09; mix-blend-mode:overlay; }
+  .eyebrow { font-size:11px; font-weight:300; letter-spacing:0.34em; text-transform:uppercase; color:var(--clay); }
+  .btn { display:inline-block; padding:15px 32px; border-radius:30px; font-size:12px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; transition:all .25s ease; cursor:pointer; border:1.5px solid transparent; }
+  .btn-primary { background:var(--clay); color:#fff; } .btn-primary:hover { background:var(--clay-dk); transform:translateY(-2px); }
+  .btn-ghost-light { background:rgba(255,255,255,0.08); color:#fff; border-color:rgba(255,255,255,0.55); }
+  .btn-ghost-light:hover { background:rgba(255,255,255,0.18); }
+
+  .nav { position:sticky; top:0; z-index:50; background:rgba(243,241,235,0.5); backdrop-filter:blur(7px); border-bottom:1px solid transparent; transition:background .3s ease, box-shadow .3s ease, border-color .3s ease; }
+  .nav.scrolled { background:rgba(243,241,235,0.92); border-bottom-color:rgba(70,84,71,0.1); box-shadow:0 6px 24px rgba(53,61,53,0.06); }
+  .nav-inner { max-width:1180px; margin:0 auto; padding:12px 40px 12px 22px; display:flex; align-items:center; justify-content:space-between; }
+  .brand-logo { height:36px; width:auto; display:block; }
+  @media (max-width:600px){ .brand-logo{ height:28px; } }
+  .nav-links { display:flex; gap:30px; align-items:center; }
+  .nav-links a { font-size:12px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--forest); }
+  .nav-links a:hover { color:var(--clay); }
+  .nav-cta { background:var(--clay); color:#fff !important; padding:11px 22px; border-radius:24px; font-size:11px !important; }
+  .nav-cta:hover { background:var(--clay-dk); }
+  @media (max-width:900px){ .nav-links a:not(.nav-cta){ display:none; } }
+
+  .phero { position:relative; min-height:66vh; display:flex; align-items:flex-end; overflow:hidden; }
+  .phero img.bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 28%; z-index:0; }
+  .phero .scrim { position:absolute; inset:0; z-index:2; background:linear-gradient(180deg, rgba(40,46,40,0.42) 0%, rgba(40,46,40,0.12) 38%, rgba(40,46,40,0.55) 72%, rgba(40,46,40,0.88) 100%); }
+  .phero .inner { position:relative; z-index:4; padding:0 0 64px; max-width:680px; }
+  .phero .eyebrow { color:#e3b9a6; }
+  .phero h1 { font-family:'Fira Sans',sans-serif; font-size:50px; font-weight:300; color:#fff; line-height:1.1; margin:16px 0 18px; text-shadow:0 2px 24px rgba(0,0,0,0.25); }
+  .phero h1 em { font-style:italic; font-weight:400; color:var(--sand); }
+  .phero p { font-size:18px; color:rgba(255,255,255,0.92); max-width:560px; text-shadow:0 1px 12px rgba(0,0,0,0.3); }
+  @media (max-width:700px){ .phero h1{ font-size:36px; } }
+  .stripe { height:4px; background:linear-gradient(to right, var(--charcoal) 0%, var(--forest) 28%, var(--moss) 52%, var(--clay) 78%, var(--sand) 100%); }
+
+  .intro { padding:88px 0 40px; }
+  .intro .lead { font-family:'Fira Sans',sans-serif; font-style:italic; font-size:21px; color:var(--forest); line-height:1.6; max-width:760px; }
+  .intro p { margin-top:18px; color:rgba(42,46,42,0.82); font-size:16px; max-width:760px; }
+
+  .how { padding:40px 0 80px; }
+  .how-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+  @media (max-width:820px){ .how-grid{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:480px){ .how-grid{ grid-template-columns:1fr; } }
+  .how-step { background:var(--white); border:1px solid rgba(70,84,71,0.1); border-radius:14px; padding:26px 24px; }
+  .how-step .s { font-size:11px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--clay); }
+  .how-step h4 { font-family:'Fira Sans',sans-serif; font-size:17px; font-weight:300; color:var(--charcoal); margin:10px 0 6px; }
+  .how-step p { font-size:13px; color:rgba(42,46,42,0.7); }
+
+  /* INTAKE FORM */
+  .intake { padding:84px 0 96px; background:var(--sand); }
+  .intake-head { text-align:center; max-width:660px; margin:0 auto 44px; }
+  .intake-head h2 { font-family:'Fira Sans',sans-serif; font-size:31px; font-weight:300; color:var(--charcoal); margin:14px 0 0; }
+  .intake-head h2 em { font-style:italic; font-weight:400; color:var(--forest); }
+  .intake-head p { margin-top:14px; color:rgba(42,46,42,0.74); }
+  .form-card { background:var(--white); border:1px solid rgba(70,84,71,0.12); border-radius:20px; padding:48px 48px; max-width:820px; margin:0 auto; box-shadow:0 18px 50px rgba(53,61,53,0.08); }
+  @media (max-width:600px){ .form-card{ padding:32px 24px; } }
+  .fgroup-title { font-family:'Fira Sans',sans-serif; font-size:18px; font-weight:700; color:var(--forest); margin:34px 0 4px; padding-bottom:10px; border-bottom:1px solid rgba(70,84,71,0.12); }
+  .fgroup-title:first-of-type { margin-top:0; }
+  .frow { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:18px; }
+  @media (max-width:560px){ .frow{ grid-template-columns:1fr; } }
+  .field-block { display:flex; flex-direction:column; gap:7px; margin-top:18px; }
+  label { font-size:12.5px; font-weight:300; color:var(--charcoal); letter-spacing:0.02em; }
+  label .opt { color:var(--moss); font-weight:400; text-transform:none; letter-spacing:0; }
+  input, select, textarea { padding:13px 16px; border-radius:12px; border:1px solid rgba(70,84,71,0.25); font-family:'Hanken Grotesk',sans-serif; font-size:14px; background:var(--paper); color:var(--ink); width:100%; }
+  textarea { resize:vertical; min-height:84px; }
+  input:focus, select:focus, textarea:focus { outline:none; border-color:var(--clay); }
+  .radio-row { display:flex; gap:18px; flex-wrap:wrap; margin-top:4px; }
+  .radio-row label { font-weight:400; font-size:13.5px; display:flex; align-items:center; gap:7px; color:rgba(42,46,42,0.8); }
+  .radio-row input { width:auto; }
+  .form-submit { margin-top:38px; text-align:center; }
+  .form-note { text-align:center; font-size:12px; color:rgba(42,46,42,0.5); margin-top:14px; }
+
+  /* session types */
+  .sessions { padding:20px 0 80px; }
+  .sess-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+  @media (max-width:760px){ .sess-grid{ grid-template-columns:1fr; } }
+  .sess { background:var(--white); border:1px solid rgba(70,84,71,0.1); border-radius:18px; padding:30px 28px; }
+  .sess h3 { font-family:'Fira Sans',sans-serif; font-weight:300; font-size:21px; color:var(--charcoal); margin-bottom:4px; }
+  .sess .tag { font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--clay); margin-bottom:14px; }
+  .sess p { font-size:14px; color:rgba(42,46,42,0.72); }
+
+  /* BOOK */
+  .book { padding:96px 0; text-align:center; }
+  .book h2 { font-family:'Fira Sans',sans-serif; font-size:30px; font-weight:300; color:var(--charcoal); margin:14px 0 0; }
+  .book h2 em { font-style:italic; font-weight:400; color:var(--forest); }
+  .book p { margin:14px auto 28px; color:rgba(42,46,42,0.74); max-width:520px; }
+
+  .footer { background:var(--charcoal); color:var(--sand); padding:48px 0 32px; }
+  .footer .row { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; }
+  .footer img { width:230px; max-width:70%; height:auto; }
+  .footer-links { display:flex; gap:22px; flex-wrap:wrap; }
+  .footer-links a { font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:rgba(234,230,217,0.72); }
+  .footer-links a:hover { color:var(--clay); }
+  .footer-bottom { margin-top:30px; padding-top:20px; border-top:1px solid rgba(234,230,217,0.12); font-size:11px; color:rgba(234,230,217,0.45); }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" aria-label="Magdarie van Staden home"><img class="brand-logo" src="assets/logo-trim.png" alt="Magdarie van Staden"></a>
+    <div class="nav-links">
+      <a href="index.html#begin">Practice</a>
+      <a href="index.html#events">Events</a>
+      <a href="corporate.html">Corporate</a>
+      <a href="index.html#about">About</a>
+      <a href="#book" class="nav-cta">Book a call</a>
+    </div>
+  </div>
+</nav>
+
+<header class="phero grain">
+  <img class="bg" src="assets/ph-private-hero.jpg" alt="One-to-one yoga by the sea">
+  <div class="wrap inner">
+    <div class="eyebrow">Private Sessions</div>
+    <h1>A practice shaped <em>entirely around you.</em></h1>
+    <p>One-to-one yoga, in person or online — met where your body actually is, not where a class assumes it should be.</p>
+  </div>
+</header>
+<div class="stripe"></div>
+
+<section class="intro">
+  <div class="wrap">
+    <p class="lead">This is the deepest way we can work together — a practice built around your body, your history, your nervous system and your day-to-day life.</p>
+    <p>Private sessions are trauma-informed and nervous-system aware, and grounded in ayurvedic and yogic lifestyle philosophy. Depending on what you need, we might weave together asana, pranayama, yoga nidra, functional movement, qigong and gentle lifestyle coaching. Because I take real care over who I work with and how, we begin with a short discovery call — so that by the time we practise, I already understand the person in front of me.</p>
+  </div>
+</section>
+
+<section class="how">
+  <div class="wrap">
+    <div class="how-grid">
+      <div class="how-step"><div class="s">Step 01</div><h4>Book a call</h4><p>Schedule a free, no-pressure discovery call — the easiest way to start.</p></div>
+      <div class="how-step"><div class="s">Step 02</div><h4>We meet</h4><p>A short conversation about your body, your goals, and what's drawing you here.</p></div>
+      <div class="how-step"><div class="s">Step 03</div><h4>Your first session</h4><p>A 75–90 minute session: consultation, practice, and a debrief on what I notice in how you move and breathe — never a critique, just a place to begin.</p></div>
+      <div class="how-step"><div class="s">Step 04</div><h4>An ongoing rhythm</h4><p>We choose a package and cadence that fits your life, with check-ins to keep it evolving.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SESSION TYPES -->
+<section class="sessions">
+  <div class="wrap">
+    <div class="sess-grid">
+      <div class="sess">
+        <h3>Private Yoga</h3>
+        <div class="tag">1–2 people</div>
+        <p>Your standard one-to-one (or you &amp; a partner / friend) — a tailored practice built entirely around your bodies and goals, in person or online.</p>
+      </div>
+      <div class="sess">
+        <h3>Private Sound Bath</h3>
+        <div class="tag">A deeper reset · premium</div>
+        <p>A standalone, in-person sound immersion — singing bowls, frequency and deep relaxation. Priced above a yoga session for the specialist setup and energetic output.</p>
+      </div>
+      <div class="sess">
+        <h3>Private Groups</h3>
+        <div class="tag">Special occasions</div>
+        <p>Bridal showers, girls' mornings, birthdays and intimate gatherings — a shared practice (yoga or sound) designed around your group and your moment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK / CALENDLY -->
+<section class="book" id="book">
+  <div class="wrap-narrow">
+    <div class="eyebrow">Let's begin</div>
+    <h2>Book a <em>discovery call.</em></h2>
+    <p>The best place to start is a free 20-minute call — we'll talk through what you're looking for and find the right way in together. Sessions are then scheduled around your availability and mine.</p>
+    <a href="https://calendly.com/YOUR-CALENDLY/discovery-call" target="_blank" rel="noopener" class="btn btn-primary">Open my calendar</a>
+    <p style="margin-top:18px;font-size:13.5px;color:rgba(42,46,42,0.6);">Prefer email? <a href="mailto:magdarievanstadenyoga@gmail.com" style="color:var(--clay-dk);font-weight:600;">magdarievanstadenyoga@gmail.com</a></p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="row">
+      <a href="index.html"><img src="assets/logo-light.png" alt="Magdarie van Staden"></a>
+      <div class="footer-links">
+        <a href="index.html#begin">Practice</a>
+        <a href="index.html#events">Events</a>
+        <a href="corporate.html">Corporate</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#touch">Contact</a>
+        <a href="liability-waiver.html">Liability waiver</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Magdarie van Staden · Yoga Teacher &amp; Mentor · Durban, KwaZulu-Natal</div>
+  </div>
+</footer>
+
+<script>(function(){var n=document.querySelector(".nav");if(!n)return;var o=function(){n.classList.toggle("scrolled",window.scrollY>20);};window.addEventListener("scroll",o,{passive:true});o();})();</script>
+</body>
+</html>
