@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Breathe — Magdarie van Staden</title>
+<meta name="description" content="A free guided breathwork tool from Magdarie van Staden. Box breathing, 4-7-8, relaxing breath and more.">
+<meta property="og:title" content="Breathe — Magdarie van Staden">
+<meta property="og:description" content="A free guided breathwork tool. Box breathing, 4-7-8, relaxing breath and more.">
+<meta property="og:image" content="https://magdarievanstaden.com/assets/enso.png">
+<meta property="og:url" content="https://magdarievanstaden.com/breathe.html">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="assets/enso.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;1,300;1,400&family=Hanken+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #465447;
+    --charcoal: #353d35;
+    --clay: #b45c1d;
+    --moss: #7a8c75;
+    --sand: #eae6d9;
+    --paper: #f4f1e7;
+    --ink: #2a2e2a;
+    --white: #fff;
+    --ring-r: 138;
+    --circ: 867.08;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-weight: 300;
+    background: var(--paper);
+    color: var(--ink);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 24px 48px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Nav ── */
+  .nav {
+    width: 100%;
+    max-width: 560px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 0 10px;
+  }
+  .nav-logo { height: 26px; width: auto; }
+  .nav-back {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--moss);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-back:hover { color: var(--forest); }
+
+  /* ── Heading ── */
+  .heading {
+    text-align: center;
+    margin: 20px 0 26px;
+  }
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.38em;
+    text-transform: uppercase;
+    color: var(--clay);
+    margin-bottom: 6px;
+  }
+  h1 {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--charcoal);
+    line-height: 1.15;
+  }
+  h1 em { font-style: italic; color: var(--moss); }
+
+  /* ── Pattern pills ── */
+  .patterns {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 30px;
+    max-width: 480px;
+  }
+  .pat-btn {
+    padding: 7px 17px;
+    border-radius: 999px;
+    border: 1px solid var(--sand);
+    background: transparent;
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--moss);
+    cursor: pointer;
+    transition: all 0.18s;
+    white-space: nowrap;
+  }
+  .pat-btn:hover { border-color: var(--moss); color: var(--forest); }
+  .pat-btn.active {
+    background: var(--forest);
+    border-color: var(--forest);
+    color: var(--white);
+  }
+
+  /* ── Breath area ── */
+  .breath-area {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  /* Progress ring */
+  .ring-svg {
+    position: absolute;
+    inset: 0;
+    width: 300px;
+    height: 300px;
+    overflow: visible;
+  }
+  .ring-track {
+    fill: none;
+    stroke: var(--sand);
+    stroke-width: 1.5;
+  }
+  #ring-progress {
+    fill: none;
+    stroke: var(--forest);
+    stroke-width: 3;
+    stroke-linecap: round;
+    transform-origin: 150px 150px;
+    transform: rotate(-90deg);
+    stroke-dasharray: 867.08;
+    stroke-dashoffset: 867.08;
+    transition: stroke 0.5s ease;
+  }
+
+  /* Enso wrapper — this is what we scale */
+  .enso-wrap {
+    position: absolute;
+    width: 210px;
+    height: 210px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0.92);
+    /* transition set dynamically by JS */
+  }
+  .enso-img {
+    width: 190px;
+    height: 190px;
+    display: block;
+    opacity: 0.88;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  /* Hold pulse animation */
+  @keyframes holdPulse {
+    0%, 100% { opacity: 0.75; }
+    50% { opacity: 1; }
+  }
+  .enso-wrap.holding {
+    animation: holdPulse 2.4s ease-in-out infinite;
+  }
+
+  /* ── Phase display ── */
+  .phase-display {
+    text-align: center;
+    margin-top: 24px;
+  }
+  .phase-label {
+    font-size: 10px;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    color: var(--moss);
+    min-height: 16px;
+    transition: color 0.4s;
+  }
+  .countdown {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 58px;
+    font-weight: 300;
+    color: var(--charcoal);
+    line-height: 1.05;
+    min-height: 66px;
+    margin: 4px 0 8px;
+    letter-spacing: -0.01em;
+    transition: color 0.4s;
+  }
+  .guide-text {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--moss);
+    min-height: 20px;
+    transition: color 0.4s;
+  }
+
+  /* ── Controls ── */
+  .controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    margin-top: 28px;
+  }
+  .start-btn {
+    padding: 13px 52px;
+    border-radius: 999px;
+    border: 1.5px solid var(--forest);
+    background: var(--forest);
+    color: var(--white);
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.07em;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+    min-width: 160px;
+  }
+  .start-btn:hover { background: var(--charcoal); border-color: var(--charcoal); }
+  .start-btn.outlined {
+    background: transparent;
+    color: var(--forest);
+  }
+  .start-btn.outlined:hover { background: var(--sand); border-color: var(--forest); }
+
+  .reset-btn {
+    background: none;
+    border: none;
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    color: var(--moss);
+    cursor: pointer;
+    padding: 4px 0;
+    transition: color 0.2s;
+  }
+  .reset-btn:hover { color: var(--clay); }
+
+  .cycles {
+    font-size: 12px;
+    color: var(--moss);
+    letter-spacing: 0.04em;
+  }
+  .cycles strong { color: var(--forest); font-weight: 500; }
+
+  /* ── Pattern description ── */
+  .pat-desc {
+    font-size: 12px;
+    color: var(--moss);
+    text-align: center;
+    margin-top: -18px;
+    margin-bottom: 22px;
+    min-height: 18px;
+    transition: opacity 0.2s;
+  }
+
+  /* ── Footer ── */
+  .footer {
+    margin-top: 56px;
+    font-size: 12px;
+    color: var(--moss);
+    text-align: center;
+    line-height: 1.8;
+  }
+  .footer a { color: var(--forest); text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+
+  /* ── Responsive ── */
+  @media (max-width: 360px) {
+    .breath-area { width: 260px; height: 260px; }
+    .ring-svg { width: 260px; height: 260px; }
+    .enso-wrap { width: 180px; height: 180px; }
+    .enso-img { width: 160px; height: 160px; }
+    .countdown { font-size: 48px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .enso-wrap { transition: none !important; }
+    .enso-wrap.holding { animation: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <img src="assets/logo.png" alt="Magdarie van Staden" class="nav-logo">
+  <a href="index.html" class="nav-back">← Back</a>
+</nav>
+
+<div class="heading">
+  <div class="eyebrow">Breathwork</div>
+  <h1>Breathe <em>with me.</em></h1>
+</div>
+
+<!-- Pattern selector -->
+<div class="patterns" role="group" aria-label="Choose a breath pattern">
+  <button class="pat-btn active" data-pat="box" aria-pressed="true">Box · 4-4-4-4</button>
+  <button class="pat-btn" data-pat="478" aria-pressed="false">4-7-8</button>
+  <button class="pat-btn" data-pat="relax" aria-pressed="false">Relax · 4-6</button>
+  <button class="pat-btn" data-pat="coherent" aria-pressed="false">5-5 Coherent</button>
+  <button class="pat-btn" data-pat="sigh" aria-pressed="false">Physiological sigh</button>
+</div>
+
+<div class="pat-desc" id="pat-desc">Balances the nervous system. A great place to start.</div>
+
+<!-- Breathing circle -->
+<div class="breath-area" role="region" aria-label="Breathing guide">
+  <svg class="ring-svg" viewBox="0 0 300 300" aria-hidden="true">
+    <circle class="ring-track" cx="150" cy="150" r="138"/>
+    <circle id="ring-progress" cx="150" cy="150" r="138"/>
+  </svg>
+  <div class="enso-wrap" id="enso-wrap">
+    <img src="assets/enso.svg" alt="" class="enso-img" id="enso-img" draggable="false">
+  </div>
+</div>
+
+<!-- Phase info -->
+<div class="phase-display" aria-live="polite" aria-atomic="true">
+  <div class="phase-label" id="phase-label">Ready</div>
+  <div class="countdown" id="countdown" aria-label="Seconds remaining">—</div>
+  <div class="guide-text" id="guide-text">Choose a pattern and press begin</div>
+</div>
+
+<!-- Controls -->
+<div class="controls">
+  <button class="start-btn" id="start-btn" onclick="toggle()">Begin</button>
+  <button class="reset-btn" onclick="reset()" aria-label="Reset breathwork timer">Reset</button>
+  <div class="cycles">Rounds complete: <strong id="cycle-count">0</strong></div>
+</div>
+
+<footer class="footer">
+  A free tool from <a href="index.html">Magdarie van Staden</a><br>
+  Trauma-informed yoga · Durban, KZN
+</footer>
+
+<script>
+/* ── Patterns ── */
+const PATTERNS = {
+  box: {
+    desc: 'Balances the nervous system. A great place to start.',
+    phases: [
+      { n: 'INHALE',  d: 4, color: '#465447', scale: 1.13, guide: 'Breathe in slowly…' },
+      { n: 'HOLD',    d: 4, color: '#7a8c75', scale: 1.13, guide: 'Hold here…' },
+      { n: 'EXHALE',  d: 4, color: '#b45c1d', scale: 0.84, guide: 'Let it all go…' },
+      { n: 'HOLD',    d: 4, color: '#c4bfb0', scale: 0.84, guide: 'Rest in the stillness…' },
+    ]
+  },
+  '478': {
+    desc: 'Calming and sleep-promoting. Exhale is longest.',
+    phases: [
+      { n: 'INHALE',  d: 4, color: '#465447', scale: 1.13, guide: 'Breathe in through the nose…' },
+      { n: 'HOLD',    d: 7, color: '#7a8c75', scale: 1.13, guide: 'Hold…' },
+      { n: 'EXHALE',  d: 8, color: '#b45c1d', scale: 0.84, guide: 'Long slow exhale…' },
+    ]
+  },
+  relax: {
+    desc: 'Longer exhale activates the parasympathetic system.',
+    phases: [
+      { n: 'INHALE',  d: 4, color: '#465447', scale: 1.13, guide: 'Breathe in…' },
+      { n: 'EXHALE',  d: 6, color: '#b45c1d', scale: 0.84, guide: 'Exhale longer than you inhale…' },
+    ]
+  },
+  coherent: {
+    desc: 'Heart Rate Variability training. Even rhythm.',
+    phases: [
+      { n: 'INHALE',  d: 5, color: '#465447', scale: 1.13, guide: 'Steady, even breath in…' },
+      { n: 'EXHALE',  d: 5, color: '#b45c1d', scale: 0.84, guide: 'Steady, even breath out…' },
+    ]
+  },
+  sigh: {
+    desc: 'Fastest way to offload CO₂ and down-regulate.',
+    phases: [
+      { n: 'INHALE',  d: 2,   color: '#465447', scale: 1.05, guide: 'First inhale — fill about 80%…' },
+      { n: 'INHALE ↑', d: 1.5, color: '#465447', scale: 1.13, guide: 'Sniff in a little more on top…' },
+      { n: 'EXHALE',  d: 6,   color: '#b45c1d', scale: 0.84, guide: 'Long, slow, full exhale…' },
+    ]
+  },
+};
+
+/* ── State ── */
+let running   = false;
+let patKey    = 'box';
+let phaseIdx  = 0;
+let phaseStart = null;
+let cycles    = 0;
+let rafId     = null;
+
+const CIRC = 2 * Math.PI * 138; // 867.08
+
+/* ── Elements ── */
+const ring       = document.getElementById('ring-progress');
+const ensoWrap   = document.getElementById('enso-wrap');
+const phaseLabel = document.getElementById('phase-label');
+const countdown  = document.getElementById('countdown');
+const guideText  = document.getElementById('guide-text');
+const startBtn   = document.getElementById('start-btn');
+const cycleCount = document.getElementById('cycle-count');
+const patDesc    = document.getElementById('pat-desc');
+
+/* ── Init ring ── */
+ring.style.strokeDasharray  = CIRC;
+ring.style.strokeDashoffset = CIRC;
+
+/* ── Pattern buttons ── */
+document.querySelectorAll('.pat-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (running) pause();
+    document.querySelectorAll('.pat-btn').forEach(b => {
+      b.classList.remove('active');
+      b.setAttribute('aria-pressed', 'false');
+    });
+    btn.classList.add('active');
+    btn.setAttribute('aria-pressed', 'true');
+    patKey = btn.dataset.pat;
+    patDesc.textContent = PATTERNS[patKey].desc;
+    reset();
+  });
+});
+
+/* ── Helpers ── */
+function phases() { return PATTERNS[patKey].phases; }
+
+function setScale(scale, durationSec) {
+  ensoWrap.style.transition = `transform ${durationSec}s ease-in-out`;
+  ensoWrap.style.transform  = `scale(${scale})`;
+}
+
+function applyPhase() {
+  const ph = phases()[phaseIdx];
+  const isHold = ph.n.startsWith('HOLD');
+
+  phaseLabel.style.color = ph.color;
+  phaseLabel.textContent = ph.n;
+  guideText.textContent  = ph.guide;
+  ring.style.stroke      = ph.color;
+
+  setScale(ph.scale, ph.d * 0.93);
+
+  if (isHold) {
+    ensoWrap.classList.add('holding');
+  } else {
+    ensoWrap.classList.remove('holding');
+  }
+}
+
+/* ── Animation loop ── */
+function tick(ts) {
+  if (!running) return;
+  if (!phaseStart) phaseStart = ts;
+
+  const ph      = phases()[phaseIdx];
+  const elapsed = (ts - phaseStart) / 1000;
+  const dur     = ph.d;
+  const progress = Math.min(elapsed / dur, 1);
+  const secs    = Math.max(Math.ceil(dur - elapsed), 0);
+
+  /* ring */
+  ring.style.strokeDashoffset = CIRC * (1 - progress);
+  /* countdown */
+  countdown.textContent = secs;
+
+  if (progress >= 1) {
+    const lastPhase = phaseIdx === phases().length - 1;
+    phaseIdx = (phaseIdx + 1) % phases().length;
+    if (lastPhase) { cycles++; cycleCount.textContent = cycles; }
+    phaseStart = ts;
+    ring.style.strokeDashoffset = CIRC;
+    applyPhase();
+  }
+
+  rafId = requestAnimationFrame(tick);
+}
+
+/* ── Controls ── */
+function start() {
+  running = true;
+  phaseStart = null;
+  startBtn.textContent = 'Pause';
+  startBtn.classList.add('outlined');
+  applyPhase();
+  rafId = requestAnimationFrame(tick);
+}
+
+function pause() {
+  running = false;
+  cancelAnimationFrame(rafId);
+  ensoWrap.classList.remove('holding');
+  startBtn.textContent = 'Resume';
+  startBtn.classList.add('outlined');
+  phaseLabel.textContent = 'Paused';
+}
+
+function toggle() {
+  if (running) {
+    pause();
+  } else if (startBtn.textContent === 'Begin') {
+    cycles = 0;
+    cycleCount.textContent = '0';
+    phaseIdx = 0;
+    start();
+  } else {
+    /* resume — restart current phase */
+    phaseStart = null;
+    running = true;
+    startBtn.textContent = 'Pause';
+    startBtn.classList.add('outlined');
+    applyPhase();
+    rafId = requestAnimationFrame(tick);
+  }
+}
+
+function reset() {
+  running = false;
+  cancelAnimationFrame(rafId);
+  phaseIdx = 0;
+  phaseStart = null;
+  cycles = 0;
+  cycleCount.textContent = '0';
+
+  startBtn.textContent = 'Begin';
+  startBtn.classList.remove('outlined');
+  phaseLabel.textContent = 'Ready';
+  phaseLabel.style.color = '';
+  countdown.textContent = '—';
+  guideText.textContent = 'Choose a pattern and press begin';
+
+  ring.style.stroke = '#465447';
+  ring.style.strokeDashoffset = CIRC;
+
+  ensoWrap.classList.remove('holding');
+  ensoWrap.style.transition = 'transform 1.2s ease-in-out';
+  ensoWrap.style.transform  = 'scale(0.92)';
+}
+</script>
+</body>
+</html>
