@@ -37,6 +37,8 @@
   .btn-ghost:hover{border-color:var(--terra-d);color:var(--terra-dd);}
   .btn-ghost-l{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.5);color:#fff;}
   .btn-ghost-l:hover{background:rgba(255,255,255,0.16);}
+  .btn-deep{background:var(--deep);color:#fff;}
+  .btn-deep:hover{background:var(--teal);transform:translateY(-2px);}
 
   /* COUNTDOWN BAR — contrasting terracotta */
   .cd-bar{background:var(--terra-d);color:#fff;text-align:center;padding:12px 16px;position:sticky;top:0;z-index:60;}
@@ -228,6 +230,30 @@
   .wf-footer{background:var(--ink);color:rgba(243,236,225,0.7);padding:40px 0;text-align:center;font-size:13px;}
   .wf-footer a{color:var(--terra);}
   .wf-footer .ww{font-family:'Fraunces',serif;font-size:26px;color:var(--terra);margin-bottom:8px;}
+
+  /* BOOKING IDENTITY STRIP */
+  .book-strip{position:relative;height:200px;overflow:hidden;}
+  .book-strip img{width:100%;height:100%;object-fit:cover;object-position:center center;display:block;}
+  @media(max-width:640px){.book-strip{height:140px;}}
+
+  /* BOOKING IDENTITY BAR */
+  .book-id-bar{background:var(--deep);overflow:hidden;padding:10px 0;white-space:nowrap;}
+  .book-id-bar-inner{display:inline-flex;animation:ticker 28s linear infinite;}
+  .book-id-bar-inner:hover{animation-play-state:paused;}
+  .book-id-seg{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(243,236,225,0.7);padding:0 40px;}
+  .book-id-seg strong{color:#fff;letter-spacing:0.18em;}
+  @keyframes ticker{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+  /* BOOKING SNAPSHOT */
+  .book-snapshot{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid rgba(14,59,59,0.12);border-radius:14px;overflow:hidden;margin-bottom:34px;background:var(--white);}
+  @media(max-width:720px){.book-snapshot{grid-template-columns:1fr;}}
+  .book-snap-cell{padding:16px 18px;border-right:1px solid rgba(14,59,59,0.08);}
+  .book-snap-cell:last-child{border-right:none;}
+  .book-snap-label{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;}
+  .book-snap-val{font-size:14px;color:var(--deep);font-weight:500;line-height:1.3;}
+  .book-snap-val small{font-size:12px;color:var(--muted);font-weight:300;display:block;}
+  .book-snap-cell.avail .book-snap-val{color:var(--terra-dd);}
+  @media(max-width:720px){.book-snap-cell:nth-child(2){border-right:none;} .book-snap-cell:nth-child(3){border-top:1px solid rgba(14,59,59,0.08);} .book-snap-cell:nth-child(4){border-top:1px solid rgba(14,59,59,0.08); border-right:none;}}
 </style>
 </head>
 <body>
@@ -320,26 +346,6 @@
       <span class="line">You don't need to be perfect.</span>
       <span class="line" style="color:var(--terra-dd);font-size:24px;">You just need to be willing to show up.</span></span>
     </p>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="testi">
-  <div class="wrap">
-    <div class="sec-head"><div class="eyebrow" style="color:var(--terra);">In their words</div></div>
-    <div class="rib">
-      <button class="arw prev" aria-label="Previous">‹</button>
-      <button class="arw next" aria-label="Next">›</button>
-      <div class="track" id="testi-track">
-        <div class="slide"><div class="stars">★★★★★</div><blockquote>&ldquo;Thank you for such an amazing retreat, Mags! The time, effort, attention to detail and care that you put into creating such a safe, relaxed space was definitely felt this weekend. Thank you for sharing your knowledge and practice of yoga in such a beautiful way. This retreat was much needed!&rdquo;</blockquote></div>
-        <div class="slide"><div class="stars">★★★★★</div><blockquote>&ldquo;Joining this was the best thing I could have done for myself.&rdquo;</blockquote></div>
-        <div class="slide"><div class="stars">★★★★★</div><blockquote>&ldquo;It was a life-changing experience. Parts of my body have been opened for the first time ever. It was hard, and sad, and uplifting, and freeing, and empowering and energising — all at the same time! I felt nourished, loved and held.&rdquo;</blockquote></div>
-        <div class="slide"><div class="stars">★★★★★</div><blockquote>&ldquo;I am so grateful for the space provided to find focus and set good intentions. What you do and what you offer makes a real difference.&rdquo;</blockquote></div>
-        <div class="slide"><div class="stars">★★★★★</div><blockquote>&ldquo;Highlight for me was broadening my understanding of yoga. Some moments were intense, but it showed me how much there is to learn. I enjoyed the different discussions we had throughout the retreat. It was also good meeting new people. Accommodation and food was brilliant.&rdquo;</blockquote></div>
-        <div class="slide"><div class="stars">★★★★★</div><blockquote>&ldquo;Thank you for seeing me through what I thought would be unachievable. You are a phenomenal teacher, and I know a few.&rdquo;</blockquote></div>
-      </div>
-    </div>
-    <div class="dots" id="testi-dots"></div>
   </div>
 </section>
 
@@ -439,29 +445,6 @@
   </div>
 </section>
 
-<!-- ABOUT MAGS -->
-<section style="background:var(--sand);">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow">About Mags</div>
-      <h2>Your guide for <em>the weekend.</em></h2>
-    </div>
-    <div class="split prose">
-      <div class="mags-pics">
-        <img src="img/mags1.jpg" alt="Magdarie van Staden" class="mp-main">
-        <img src="img/mags2.jpg" alt="Warrior 2 by the sea">
-        <img src="img/mags3.jpg" alt="Yoga underwater">
-      </div>
-      <div>
-        <p>Magdarie van Staden (Mags) is a 500-hour trauma-informed yoga teacher with over ten years' experience of teaching yoga and hosting retreats. She draws from hatha, vinyasa, yin, somatic movement and qigong to move the body the way it's meant to move — connected to breath, anchored in sensation, becoming still.</p>
-        <p>In practice the focus is always the same: come back to a felt sense in the body. Sessions move between slower nervous system resets and stronger, heat-building practices. Both are equally needed.</p>
-        <p>In a retreat, Mags holds a container for you to step away from default mode — the constant doing, the mental noise, the forgetting. To give your nervous system a real exhale.</p>
-        <div class="callout">If you have never been on retreat before, it is one of the most precious things you can do for yourself. <em>Come and see.</em></div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- RATES -->
 <section id="rates">
   <div class="wrap">
@@ -498,9 +481,60 @@
   </div>
 </section>
 
-<!-- SECURE YOUR SPOT -->
-<section id="book" style="background:var(--sand);">
+<!-- TESTIMONIALS (just before booking — trust before the ask) -->
+<section class="testi">
   <div class="wrap">
+    <div class="sec-head"><div class="eyebrow" style="color:var(--terra);">In their words</div></div>
+    <div class="rib">
+      <button class="arw prev" aria-label="Previous">‹</button>
+      <button class="arw next" aria-label="Next">›</button>
+      <div class="track" id="testi-track">
+        <div class="slide"><div class="stars">★★★★★</div><blockquote>&ldquo;Thank you for such an amazing retreat, Mags! The time, effort, attention to detail and care that you put into creating such a safe, relaxed space was definitely felt this weekend. Thank you for sharing your knowledge and practice of yoga in such a beautiful way. This retreat was much needed!&rdquo;</blockquote></div>
+        <div class="slide"><div class="stars">★★★★★</div><blockquote>&ldquo;Joining this was the best thing I could have done for myself.&rdquo;</blockquote></div>
+        <div class="slide"><div class="stars">★★★★★</div><blockquote>&ldquo;It was a life-changing experience. Parts of my body have been opened for the first time ever. It was hard, and sad, and uplifting, and freeing, and empowering and energising — all at the same time! I felt nourished, loved and held.&rdquo;</blockquote></div>
+        <div class="slide"><div class="stars">★★★★★</div><blockquote>&ldquo;I am so grateful for the space provided to find focus and set good intentions. What you do and what you offer makes a real difference.&rdquo;</blockquote></div>
+        <div class="slide"><div class="stars">★★★★★</div><blockquote>&ldquo;Highlight for me was broadening my understanding of yoga. Some moments were intense, but it showed me how much there is to learn. I enjoyed the different discussions we had throughout the retreat. It was also good meeting new people. Accommodation and food was brilliant.&rdquo;</blockquote></div>
+        <div class="slide"><div class="stars">★★★★★</div><blockquote>&ldquo;Thank you for seeing me through what I thought would be unachievable. You are a phenomenal teacher, and I know a few.&rdquo;</blockquote></div>
+      </div>
+    </div>
+    <div class="dots" id="testi-dots"></div>
+  </div>
+</section>
+
+<!-- SECURE YOUR SPOT -->
+<section id="book" style="background:var(--sand);padding-top:0;">
+
+  <!-- Identity strip: hero image -->
+  <div class="book-strip">
+    <img src="img/hero.jpg" alt="Wayfinding Retreat 2026">
+  </div>
+
+  <!-- Identity bar: scrolling ticker -->
+  <div class="book-id-bar">
+    <div class="book-id-bar-inner">
+      <span class="book-id-seg"><strong>Wayfinding Retreat 2026</strong> &nbsp;·&nbsp; Yoga · Qigong · Breathwork · Sound · Journaling &nbsp;·&nbsp; 9–11 October 2026 · Pumula, South Coast KZN &nbsp;·&nbsp; Hosted by Magdarie van Staden</span>
+      <span class="book-id-seg"><strong>Wayfinding Retreat 2026</strong> &nbsp;·&nbsp; Yoga · Qigong · Breathwork · Sound · Journaling &nbsp;·&nbsp; 9–11 October 2026 · Pumula, South Coast KZN &nbsp;·&nbsp; Hosted by Magdarie van Staden</span>
+    </div>
+  </div>
+
+  <div class="wrap" style="padding-top:52px;">
+
+    <!-- Snapshot row -->
+    <div class="book-snapshot">
+      <div class="book-snap-cell">
+        <div class="book-snap-label">When</div>
+        <div class="book-snap-val">9–11 Oct 2026 <small>Fri 2pm – Sun 2pm</small></div>
+      </div>
+      <div class="book-snap-cell">
+        <div class="book-snap-label">Where</div>
+        <div class="book-snap-val">Pumula Retreat Centre <small>South Coast, KZN</small></div>
+      </div>
+      <div class="book-snap-cell">
+        <div class="book-snap-label">What's included</div>
+        <div class="book-snap-val">Accommodation + all meals <small>All sessions &amp; practice equipment</small></div>
+      </div>
+    </div>
+
     <div class="sec-head" style="margin-bottom:36px;">
       <div class="eyebrow">Booking</div>
       <h2>Secure your spot <em>now.</em></h2>
@@ -508,11 +542,11 @@
     </div>
     <div class="pay3">
       <div class="payc feat">
-        <div class="badge">Lowest commitment</div>
+        <div class="badge" style="background:var(--deep);">Lowest commitment</div>
         <h3>Deposit</h3>
         <div class="amt">R1,000</div>
         <div class="sub">Reserve your place. Balance due 25 Sept.</div>
-        <a href="https://paystack.shop/pay/wayfinding26-deposit" target="_blank" rel="noopener" class="btn btn-terra">Pay deposit</a>
+        <a href="https://paystack.shop/pay/wayfinding26-deposit" target="_blank" rel="noopener" class="btn btn-deep">Pay deposit</a>
       </div>
       <div class="payc" id="pay-eb">
         <h3>Pay in full · early-bird</h3>
@@ -535,6 +569,29 @@
     </div>
     <p style="text-align:center;color:var(--muted);font-size:13.5px;margin-top:20px;">Questions first? <a href="mailto:magdarievanstadenyoga@gmail.com" style="color:var(--terra-dd);font-weight:600;">Email Mags</a>.</p>
     <p style="text-align:center;color:var(--terra-dd);font-family:'Fraunces',serif;font-style:italic;font-size:18px;margin-top:14px;">These retreats fill up — and we're limited to 18. If you've been thinking about it, now is the time.</p>
+  </div>
+</section>
+
+<!-- ABOUT MAGS (just after booking — reassurance after the ask) -->
+<section style="background:var(--cream);">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">About Mags</div>
+      <h2>Your guide for <em>the weekend.</em></h2>
+    </div>
+    <div class="split prose">
+      <div class="mags-pics">
+        <img src="img/mags1.jpg" alt="Magdarie van Staden" class="mp-main">
+        <img src="img/mags2.jpg" alt="Warrior 2 by the sea">
+        <img src="img/mags3.jpg" alt="Yoga underwater">
+      </div>
+      <div>
+        <p>Magdarie van Staden (Mags) is a 500-hour trauma-informed yoga teacher with over ten years' experience of teaching yoga and hosting retreats. She draws from hatha, vinyasa, yin, somatic movement and qigong to move the body the way it's meant to move — connected to breath, anchored in sensation, becoming still.</p>
+        <p>In practice the focus is always the same: come back to a felt sense in the body. Sessions move between slower nervous system resets and stronger, heat-building practices. Both are equally needed.</p>
+        <p>In a retreat, Mags holds a container for you to step away from default mode — the constant doing, the mental noise, the forgetting. To give your nervous system a real exhale.</p>
+        <div class="callout">If you have never been on retreat before, it is one of the most precious things you can do for yourself. <em>Come and see.</em></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -625,10 +682,10 @@
     <p class="eyebrow" style="margin-bottom:14px;">Explore more with Mags</p>
     <h2 style="font-size:32px;color:var(--deep);margin-bottom:16px;">Yoga, private sessions <em>&amp; more.</em></h2>
     <p style="color:var(--muted);max-width:560px;margin:0 auto 36px;">Beyond retreats, Magdarie offers private one-to-one yoga sessions, corporate wellness programmes, sound baths and group classes across Durban &amp; KZN.</p>
-    <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;">
-      <a href="../../" class="btn btn-terra">Visit the main site</a>
-      <a href="../../private-sessions.html" class="btn btn-ghost">Private sessions</a>
-      <a href="../../corporate.html" class="btn btn-ghost">Corporate wellness</a>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:nowrap;">
+      <a href="../../" class="btn btn-terra" style="padding:12px 22px;font-size:11px;">Visit the main site</a>
+      <a href="../../private-sessions.html" class="btn btn-ghost" style="padding:12px 22px;font-size:11px;">Private sessions</a>
+      <a href="../../corporate.html" class="btn btn-ghost" style="padding:12px 22px;font-size:11px;">Corporate wellness</a>
     </div>
   </div>
 </section>
@@ -679,6 +736,29 @@
       sb.classList.toggle('show', past && !inBook);
     }
     window.addEventListener('scroll',upd,{passive:true}); window.addEventListener('resize',upd); upd();
+  })();
+  // ---------- GOOGLE SHEETS AVAILABILITY ----------
+  // HOW TO SET UP:
+  // 1. In your CRM Google Sheet, add a cell (e.g. B1) with formula: =18-COUNTA(A2:A19)
+  //    (where column A contains one booked name per row starting at A2)
+  // 2. File > Share > Publish to web > Sheet1 > CSV > Publish
+  // 3. Copy the published URL and paste it below, replacing PASTE_YOUR_PUBLISHED_CSV_URL_HERE
+  // 4. The page will fetch it live on every load — no other maintenance needed
+  (function(){
+    var SHEET_CSV_URL = 'PASTE_YOUR_PUBLISHED_CSV_URL_HERE';
+    if (!SHEET_CSV_URL || SHEET_CSV_URL.indexOf('PASTE') === 0) return;
+    fetch(SHEET_CSV_URL + '&cachebust=' + Date.now())
+      .then(function(r){ return r.text(); })
+      .then(function(csv){
+        var val = parseInt(csv.split('\n')[0].split(',')[0].trim(), 10);
+        if (isNaN(val) || val < 0) return;
+        var sc = document.getElementById('spots-count');
+        var ss = document.getElementById('spots-snapshot');
+        if (sc) sc.textContent = val;
+        if (ss) ss.innerHTML = val + ' remaining <small>of 18 spots</small>';
+        if (val <= 3 && sc) sc.style.color = 'var(--terra-dd)';
+      })
+      .catch(function(){});
   })();
   // ---------- AUTO PRICING after early-bird ----------
   (function(){
