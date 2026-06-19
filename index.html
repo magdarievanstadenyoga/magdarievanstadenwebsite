@@ -17,7 +17,51 @@
 <link rel="apple-touch-icon" href="assets/favicon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Hanken+Grotesk:wght@300;400;500;600;700&family=Oooh+Baby&display=swap" rel="stylesheet">
+<!-- Headings: Cabin (previous heading font was Fira Sans) -->
+<link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Hanken+Grotesk:wght@300;400;500;600;700&family=Oooh+Baby&display=swap" rel="stylesheet">
+
+<!-- ═══ Local SEO: LocalBusiness structured data (helps "yoga Umhlanga / Durban North / near me" search) ═══ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "HealthAndBeautyBusiness"],
+  "@id": "https://magdarievanstaden.com/#business",
+  "name": "Magdarie van Staden Yoga",
+  "alternateName": "Magdarie van Staden — Yoga Teacher & Mentor",
+  "description": "Trauma-informed yoga in Durban — group classes, private 1:1 sessions, sound baths, corporate wellness and retreats across Umhlanga, La Lucia, Durban North and Westville, KwaZulu-Natal.",
+  "url": "https://magdarievanstaden.com/",
+  "image": "https://magdarievanstaden.com/assets/ph-herowide-alt.jpg",
+  "logo": "https://magdarievanstaden.com/assets/enso.png",
+  "email": "magdarievanstadenyoga@gmail.com",
+  "priceRange": "$$",
+  "founder": { "@type": "Person", "name": "Magdarie van Staden", "jobTitle": "Yoga Teacher & Mentor (E-RYT 500)" },
+  "address": { "@type": "PostalAddress", "addressLocality": "Umhlanga", "addressRegion": "KwaZulu-Natal", "addressCountry": "ZA" },
+  "areaServed": [
+    { "@type": "Place", "name": "Umhlanga" },
+    { "@type": "Place", "name": "La Lucia" },
+    { "@type": "Place", "name": "Durban North" },
+    { "@type": "Place", "name": "Westville" },
+    { "@type": "Place", "name": "Durban" },
+    { "@type": "Place", "name": "KwaZulu-Natal" }
+  ],
+  "knowsAbout": ["Yoga","Hatha Yoga","Vinyasa Yoga","Yin Yoga","Sound Bath","Breathwork","Yoga Nidra","Qigong","Corporate Wellness","Yoga Retreats","Private Yoga","Meditation"],
+  "sameAs": [
+    "https://instagram.com/magdarievanstadenyoga",
+    "https://youtube.com/@magdarievanstadenyoga",
+    "https://facebook.com/magdarievanstadenyoga"
+  ]
+}
+</script>
+
+<!-- ═══ Google Analytics 4 — replace G-XXXXXXXXXX with your Measurement ID (see SEO-and-Analytics-Setup-Guide.md) ═══ -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
 <style>
   :root {
     --forest:#465447; --charcoal:#353d35; --moss:#7a8c75; --sand:#eae6d9;
@@ -30,20 +74,22 @@
   a { color:inherit; text-decoration:none; }
   section { scroll-margin-top:96px; }
   .wrap { max-width:1180px; margin:0 auto; padding:0 40px; }
+  .mbr { display:none; }
+  @media (max-width:600px){ .mbr { display:inline; } }
 
   .grain::before { content:''; position:absolute; inset:0; z-index:3; pointer-events:none;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     opacity:0.09; mix-blend-mode:overlay; }
 
   .eyebrow { font-size:11px; font-weight:300; letter-spacing:0.36em; text-transform:uppercase; color:var(--clay); }
-  h2.section-title { font-family:'Fira Sans',sans-serif; font-size:33px; font-weight:300; color:var(--charcoal); line-height:1.22; margin:16px 0 0; }
-  h2.section-title em { font-style:italic; font-weight:400; color:var(--forest); }
+  h2.section-title { font-family:'Cabin',sans-serif; font-size:33px; font-weight:300; color:var(--charcoal); line-height:1.22; margin:16px 0 0; }
+  h2.section-title em { font-style:normal; font-weight:400; color:var(--forest); }
 
   @keyframes breathe { 0%,100% { transform:scale(1); opacity:0.05; } 50% { transform:scale(1.05); opacity:0.08; } }
 
   /* announcement bar */
   .annc { background:var(--charcoal); color:var(--sand); position:relative; overflow:hidden; z-index:61; }
-  .annc-track { display:flex; width:max-content; animation:annc-marq 34s linear infinite; padding:11px 0; }
+  .annc-track { display:flex; width:max-content; animation:annc-marq 54s linear infinite; padding:11px 0; }
   .annc:hover .annc-track { animation-play-state:paused; }
   .annc-track a { display:inline-flex; align-items:center; gap:13px; padding:0 26px; white-space:nowrap; font-size:13px; letter-spacing:0.03em; color:var(--sand); }
   .annc-track .annc-k { font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:#e3b9a6; }
@@ -54,66 +100,93 @@
   .annc .x { position:absolute; right:0; top:0; height:100%; padding:0 16px 0 28px; background:linear-gradient(90deg, transparent, var(--charcoal) 38%); border:none; color:var(--sand); font-size:19px; cursor:pointer; line-height:1; opacity:0.85; z-index:2; }
   .annc .x:hover { opacity:1; }
   @media (prefers-reduced-motion:reduce){ .annc-track{ animation:none; justify-content:center; width:100%; } }
-  /* ─── NAV ─── */
-  .nav { position:sticky; top:0; z-index:50; background:rgba(243,241,235,0.5); backdrop-filter:blur(7px); border-bottom:1px solid transparent; transition:background .3s ease, box-shadow .3s ease, border-color .3s ease; }
-  .nav.scrolled { background:rgba(243,241,235,0.92); border-bottom-color:rgba(70,84,71,0.1); box-shadow:0 6px 24px rgba(53,61,53,0.06); }
-  .nav-inner { max-width:1180px; margin:0 auto; padding:12px 40px 12px 22px; display:flex; align-items:center; justify-content:space-between; }
-  .brand-logo { height:36px; width:auto; display:block; }
-  @media (max-width:600px){ .brand-logo{ height:28px; } }
-  .nav-links { display:flex; gap:30px; align-items:center; }
-  .nav-links a { font-size:12px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--forest); transition:color .25s; }
-  .nav-links a:hover { color:var(--clay); }
-  .nav-cta { background:var(--clay); color:#fff !important; padding:11px 22px; border-radius:24px; font-size:11px !important; transition:background .25s; }
+  /* ─── NAV (transparent over hero, frosts on scroll) ─── */
+  .nav { position:sticky; top:0; z-index:50; background:transparent; border-bottom:1px solid transparent; transition:background .55s ease, box-shadow .55s ease, border-color .55s ease; }
+  .nav.scrolled { backdrop-filter:blur(9px); border-bottom-color:rgba(70,84,71,0.1); box-shadow:0 8px 28px rgba(53,61,53,0.1); }
+  .nav-inner { max-width:1180px; margin:0 auto; padding:14px 40px 14px 22px; display:flex; align-items:center; justify-content:space-between; }
+  .brand-logo { height:40px; width:auto; display:block; }
+  .brand-logo.dark { display:none; }
+  .nav.scrolled .brand-logo.light { display:none; }
+  .nav.scrolled .brand-logo.dark { display:block; }
+  @media (max-width:600px){ .brand-logo{ height:32px; } }
+  .nav-links { display:flex; gap:28px; align-items:center; }
+  .nav-links > a, .nav-item > a { font-size:12px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:#fff; transition:color .25s; text-shadow:0 1px 8px rgba(0,0,0,0.25); cursor:pointer; }
+  .nav.scrolled .nav-links > a, .nav.scrolled .nav-item > a { color:var(--forest); text-shadow:none; }
+  .nav-links > a:hover, .nav-item:hover > a, .nav.scrolled .nav-links > a:hover, .nav.scrolled .nav-item:hover > a { color:var(--clay); }
+  .nav-item { position:relative; }
+  .nav-item.has-drop > a::after { content:'⌄'; font-size:11px; margin-left:5px; opacity:0.7; }
+  .dropdown { position:absolute; top:calc(100% + 12px); left:50%; transform:translateX(-50%) translateY(8px); min-width:212px; background:var(--paper); border:1px solid rgba(70,84,71,0.1); border-radius:14px; box-shadow:0 18px 44px rgba(53,61,53,0.16); padding:9px; opacity:0; visibility:hidden; transition:opacity .25s ease, transform .25s ease; z-index:60; }
+  .dropdown::before { content:''; position:absolute; top:-14px; left:0; right:0; height:14px; }
+  .nav-item.has-drop:hover .dropdown { opacity:1; visibility:visible; transform:translateX(-50%) translateY(0); }
+  .dropdown a { display:block; padding:11px 15px; font-size:11.5px; font-weight:500; letter-spacing:0.06em; text-transform:uppercase; color:var(--forest) !important; border-radius:9px; white-space:nowrap; text-shadow:none !important; }
+  .dropdown a:hover { background:rgba(192,104,73,0.1); color:var(--clay-dk) !important; }
+  .nav-cta { background:var(--clay); color:#fff !important; padding:11px 22px; border-radius:24px; font-size:11px !important; text-shadow:none !important; transition:background .25s; }
   .nav-cta:hover { background:var(--clay-dk); }
-  @media (max-width:900px){ .nav-links a:not(.nav-cta){ display:none; } }
+  /* hamburger + mobile menu */
+  .nav-toggle { display:none; width:30px; height:22px; background:none; border:none; cursor:pointer; padding:0; position:relative; z-index:62; }
+  .nav-toggle span { display:block; height:2px; border-radius:2px; background:#fff; margin:5px 0; transition:transform .3s, opacity .3s, background .3s; box-shadow:0 1px 4px rgba(0,0,0,0.2); }
+  .nav.scrolled .nav-toggle span { background:var(--charcoal); box-shadow:none; }
+  body.menu-open .nav-toggle span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+  body.menu-open .nav-toggle span:nth-child(2){ opacity:0; }
+  body.menu-open .nav-toggle span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+  body.menu-open .nav-toggle span { background:var(--charcoal); }
+  .mobile-menu { position:fixed; top:0; right:0; bottom:0; width:82%; max-width:330px; background:var(--paper); transform:translateX(100%); transition:transform .35s cubic-bezier(.22,.61,.36,1); z-index:60; padding:96px 34px 34px; box-shadow:-12px 0 44px rgba(0,0,0,0.16); }
+  .mobile-menu.open { transform:none; }
+  .mobile-menu a { display:block; font-family:'Cabin',sans-serif; font-size:17px; font-weight:500; color:var(--forest); padding:15px 0; border-bottom:1px solid rgba(70,84,71,0.1); letter-spacing:0.04em; }
+  .mobile-menu .mm-head { display:block; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--clay); margin-top:20px; margin-bottom:2px; }
+  .mobile-menu .mm-cta { border-bottom:none; margin-top:20px; background:var(--clay); color:#fff; text-align:center; border-radius:24px; padding:14px 0; }
+  .mobile-overlay { position:fixed; inset:0; background:rgba(20,30,28,0.4); opacity:0; visibility:hidden; transition:opacity .3s, visibility .3s; z-index:59; }
+  .mobile-overlay.open { opacity:1; visibility:visible; }
+  @media (max-width:900px){ .nav-links{ display:none; } .nav-toggle{ display:block; } }
+  @media (min-width:901px){ .mobile-menu, .mobile-overlay{ display:none; } }
 
   .btn { display:inline-block; padding:15px 32px; border-radius:30px; font-size:12px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; transition:all .25s ease; cursor:pointer; border:1.5px solid transparent; }
   .btn-primary { background:var(--clay); color:#fff; } .btn-primary:hover { background:var(--clay-dk); transform:translateY(-2px); }
   .btn-forest { background:var(--forest); color:var(--sand); } .btn-forest:hover { background:var(--charcoal); transform:translateY(-2px); }
   .btn-ghost { background:transparent; color:var(--forest); border-color:rgba(70,84,71,0.4); } .btn-ghost:hover { border-color:var(--clay); color:var(--clay); }
 
-  /* ─── HERO (split, full body) ─── */
-  .hero { display:grid; grid-template-columns:1.02fr 0.98fr; min-height:90vh; position:relative; background:#f3f1eb; }
-  .hero-left { display:flex; flex-direction:column; justify-content:center; padding:80px 64px 80px 0; position:relative; overflow:hidden; }
-  .hero-watermark { position:absolute; left:-130px; top:50%; transform:translateY(-50%); width:540px; height:540px; z-index:0; animation:breathe 9s ease-in-out infinite; pointer-events:none; opacity:0.5; }
-  .hero-inner { position:relative; z-index:2; max-width:560px; }
-  .hero h1 { font-family:'Fira Sans',sans-serif; font-size:62px; font-weight:300; color:var(--charcoal); line-height:1.06; letter-spacing:-0.015em; margin:0 0 26px; }
-  .hero h1 em { font-style:italic; font-weight:400; color:var(--moss); }
-  .hero .pos { font-size:17.5px; color:rgba(42,46,42,0.82); margin-bottom:36px; max-width:500px; }
-  .hero-actions { display:flex; gap:16px; flex-wrap:wrap; align-items:center; }
+  /* ─── HERO (full-bleed image + overlay) ─── */
+  .hero { position:relative; min-height:94vh; margin-top:-72px; display:flex; align-items:flex-end; justify-content:center; overflow:hidden; background:var(--charcoal); text-align:center; }
+  .hero-img { position:absolute; left:0; top:-6%; width:100%; height:112%; object-fit:cover; object-position:center 46%; z-index:0; will-change:transform; }
+  .hero-scrim { position:absolute; inset:0; z-index:1; background:
+      linear-gradient(180deg, rgba(12,20,18,0.34) 0%, rgba(12,20,18,0.05) 26%, rgba(12,20,18,0.18) 58%, rgba(12,20,18,0.72) 100%); }
+  .hero-content { position:relative; z-index:2; max-width:760px; margin:0 auto; padding-bottom:8vh; }
+  .hero h1 { font-family:'Cabin',sans-serif; font-size:54px; font-weight:700; color:#fff; line-height:1.0; letter-spacing:0.01em; text-transform:uppercase; margin:0 0 18px; white-space:nowrap; text-shadow:0 4px 30px rgba(0,0,0,0.55), 0 1px 4px rgba(0,0,0,0.5); }
+  .hero .pos { font-size:17.5px; line-height:1.62; color:rgba(255,255,255,0.96); margin:0 auto 30px; max-width:560px; text-shadow:0 2px 16px rgba(0,0,0,0.55); }
+  .hero-actions { display:flex; gap:16px; flex-wrap:wrap; align-items:center; justify-content:center; }
+  .hero-actions .btn { transition:transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .25s, background .25s; }
+  .hero-actions .btn:hover { transform:translateY(-3px) scale(1.04); box-shadow:0 12px 30px rgba(0,0,0,0.3); }
   .btn-ghost { background:transparent; color:var(--forest); border-color:rgba(70,84,71,0.4); } .btn-ghost:hover { border-color:var(--clay); color:var(--clay); }
   .btn-moss { background:transparent; color:var(--forest); border-color:rgba(70,84,71,0.4); } .btn-moss:hover { background:var(--moss); border-color:var(--moss); color:#fff; transform:translateY(-2px); }
-  .hero-right { position:relative; overflow:hidden; }
-  .hero-img { position:absolute; left:0; top:-7%; width:100%; height:114%; object-fit:cover; object-position:50% 42%; will-change:transform; }
-  @media (max-width:860px){
-    .hero { grid-template-columns:1fr; min-height:auto; }
-    .hero-left { padding:48px 28px 44px; order:2; }
-    .hero-watermark { display:none; }
-    .hero-right { order:1; aspect-ratio:4/5; }
-    .hero-img { object-position:50% 30%; }
-    .hero h1 { font-size:40px; }
-  }
-
-  /* hero modern magic */
-  .hero .eyebrow { display:inline-flex; align-items:center; gap:14px; }
-  .hero .eyebrow::before { content:''; width:32px; height:1px; background:var(--clay); }
-  .hero-inner > * { opacity:0; transform:translateY(20px); animation:heroIn 1s cubic-bezier(.22,.61,.36,1) forwards; }
-  .hero-inner > *:nth-child(1){ animation-delay:.10s }
-  .hero-inner > *:nth-child(2){ animation-delay:.24s }
-  .hero-inner > *:nth-child(3){ animation-delay:.38s }
-  .hero-inner > *:nth-child(4){ animation-delay:.52s }
+  .btn-hero-ghost { background:rgba(255,255,255,0.08); color:#fff; border-color:rgba(255,255,255,0.6); backdrop-filter:blur(4px); } .btn-hero-ghost:hover { background:rgba(255,255,255,0.18); transform:translateY(-2px); }
+  .hero-content > * { opacity:0; transform:translateY(20px); animation:heroIn 1s cubic-bezier(.22,.61,.36,1) forwards; }
+  .hero-content > *:nth-child(1){ animation-delay:.12s }
+  .hero-content > *:nth-child(2){ animation-delay:.28s }
+  .hero-content > *:nth-child(3){ animation-delay:.44s }
   @keyframes heroIn { to { opacity:1; transform:none; } }
-  .hero-scroll { position:absolute; left:40px; bottom:34px; display:flex; align-items:center; gap:12px; z-index:3; }
-  .hero-scroll .ln { width:48px; height:1px; background:rgba(70,84,71,0.3); position:relative; overflow:hidden; }
+  .hero-scroll { position:absolute; left:40px; bottom:32px; display:flex; align-items:center; gap:12px; z-index:3; }
+  .hero-scroll .ln { width:48px; height:1px; background:rgba(255,255,255,0.4); position:relative; overflow:hidden; }
   .hero-scroll .ln::after { content:''; position:absolute; inset:0; width:45%; background:var(--clay); animation:scrollln 2.6s ease-in-out infinite; }
   @keyframes scrollln { 0%{ transform:translateX(-110%);} 60%,100%{ transform:translateX(260%);} }
-  .hero-scroll span { font-size:10px; letter-spacing:0.28em; text-transform:uppercase; font-weight:400; color:var(--moss); }
-  @media (max-width:860px){ .hero-scroll{ display:none; } }
-  @media (prefers-reduced-motion:reduce){ .hero-inner > *{ opacity:1; transform:none; animation:none; } .hero-scroll .ln::after{ animation:none; } }
+  .hero-scroll span { font-size:10px; letter-spacing:0.28em; text-transform:uppercase; font-weight:500; color:rgba(255,255,255,0.85); }
+  @media (max-width:860px){ .hero-scroll{ display:none; } .hero h1{ font-size:42px; white-space:normal; } .hero{ min-height:88vh; } .hero-content{ padding-bottom:6vh; } }
+  @media (prefers-reduced-motion:reduce){ .hero-content > *{ opacity:1; transform:none; animation:none; } .hero-scroll .ln::after{ animation:none; } }
 
-  .stripe { height:4px; background:linear-gradient(to right, var(--charcoal) 0%, var(--forest) 28%, var(--moss) 52%, var(--clay) 78%, var(--sand) 100%); }
-
-  /* brand interstitial band (section divider) */
+  /* ─── WHERE TO BEGIN (offerings, hover reveal) ─── */
+  .offers6 { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  @media (max-width:860px){ .offers6{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:560px){ .offers6{ grid-template-columns:1fr; } }
+  .offer6 { position:relative; overflow:hidden; border-radius:16px; min-height:210px; display:flex; flex-direction:column; justify-content:flex-end; padding:26px 26px; color:#fff; transition:transform .3s, box-shadow .3s; }
+  .offer6:hover { transform:translateY(-4px); box-shadow:0 24px 50px rgba(53,61,53,0.22); }
+  .offer6 .o6bg { position:absolute; inset:0; background-size:cover; background-position:center; z-index:0; transition:transform .7s cubic-bezier(.22,.61,.36,1); }
+  .offer6:hover .o6bg { transform:scale(1.06); }
+  .offer6 .o6scrim { position:absolute; inset:0; z-index:1; background:linear-gradient(180deg, rgba(20,30,28,0.1) 0%, rgba(20,30,28,0.34) 46%, rgba(20,30,28,0.84) 100%); }
+  .offer6 > h3, .offer6 > .od, .offer6 > .oa { position:relative; z-index:2; }
+  .offer6 h3 { font-family:'Cabin',sans-serif; font-size:21px; font-weight:600; color:#fff; line-height:1.18; text-shadow:0 2px 14px rgba(0,0,0,0.45); }
+  .offer6 .od { font-size:14px; color:rgba(255,255,255,0.95); line-height:1.55; max-height:0; opacity:0; overflow:hidden; transition:max-height .45s ease, opacity .3s ease, margin .4s ease; text-shadow:0 1px 10px rgba(0,0,0,0.5); }
+  .offer6:hover .od { max-height:150px; opacity:1; margin-top:10px; }
+  .offer6 .oa { display:inline-flex; align-items:center; gap:7px; font-size:11px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:#f3c4a4; margin-top:14px; opacity:0; transform:translateY(6px); transition:opacity .3s, transform .3s; text-shadow:0 1px 8px rgba(0,0,0,0.5); }
+  .offer6:hover .oa { opacity:1; transform:none; }  /* brand interstitial band (section divider) */
   .brand-band { background:var(--charcoal); padding:84px 0; text-align:center; position:relative; overflow:hidden; }
   .brand-band .bb-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 40%; z-index:0; opacity:0.35; }
   .brand-band .bb-tint { position:absolute; inset:0; z-index:1; background:linear-gradient(180deg, rgba(53,61,53,0.72), rgba(70,84,71,0.66)); }
@@ -136,9 +209,9 @@
   .modalities .mod-head p { color:rgba(234,230,217,0.7); }
   .journey3 { display:grid; grid-template-columns:repeat(3,1fr); gap:34px; margin-top:38px; }
   @media (max-width:860px){ .journey3{ grid-template-columns:1fr; gap:24px; } }
-  .jgroup .jicon { display:inline-flex; width:36px; height:36px; margin-bottom:12px; }
-  .jgroup .jicon svg { width:100%; height:100%; fill:none; stroke:var(--clay); stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; }
-  .jgroup .jh { font-family:'Fira Sans',sans-serif; font-weight:300; font-size:22px; color:#fff; }
+  .jgroup .jicon { display:block; width:58px; height:58px; margin-bottom:14px; }
+  .jgroup .jicon img { width:100%; height:100%; object-fit:contain; }
+  .jgroup .jh { font-family:'Cabin',sans-serif; font-weight:300; font-size:22px; color:#fff; }
   .jgroup .js { font-size:13px; color:#e3b9a6; margin:6px 0 16px; }
   .jgroup ul { list-style:none; }
   .jgroup li { position:relative; padding:10px 0 10px 22px; font-size:15px; color:rgba(234,230,217,0.9); border-top:1px solid rgba(234,230,217,0.1); transition:color .2s, padding .2s; }
@@ -152,7 +225,7 @@
   .mod-col { background:var(--paper); border:1px solid rgba(70,84,71,0.1); border-radius:20px; padding:34px 30px; transition:transform .35s cubic-bezier(.22,.61,.36,1), box-shadow .35s; }
   .mod-col:hover { transform:translateY(-4px); box-shadow:0 18px 40px rgba(53,61,53,0.08); }
   .mod-col .mc-num { font-size:11px; font-weight:400; letter-spacing:0.24em; text-transform:uppercase; color:var(--clay); }
-  .mod-col h3 { font-family:'Fira Sans',sans-serif; font-weight:300; font-size:23px; color:var(--charcoal); margin:8px 0 4px; }
+  .mod-col h3 { font-family:'Cabin',sans-serif; font-weight:300; font-size:23px; color:var(--charcoal); margin:8px 0 4px; }
   .mod-col .mc-sub { font-size:13px; color:var(--moss); margin-bottom:20px; }
   .mod-tags { display:flex; flex-wrap:wrap; gap:8px; }
   .mod-tags span { font-size:12.5px; padding:8px 14px; border-radius:22px; background:var(--white); border:1px solid rgba(70,84,71,0.16); color:var(--charcoal); transition:all .2s; }
@@ -175,7 +248,7 @@
   .tile-accent { position:absolute; inset:0; z-index:1; opacity:0.30; mix-blend-mode:multiply; }
   .tile-inner { position:relative; z-index:2; }
   .tile-eyebrow { font-size:11px; font-weight:600; letter-spacing:0.26em; text-transform:uppercase; color:var(--sand); }
-  .tile-title { font-family:'Fira Sans',sans-serif; font-size:26px; font-weight:400; line-height:1.18; margin:8px 0 10px; color:#fff; }
+  .tile-title { font-family:'Cabin',sans-serif; font-size:26px; font-weight:400; line-height:1.18; margin:8px 0 10px; color:#fff; }
   .tile-desc { font-size:13.5px; color:rgba(255,255,255,0.95); line-height:1.62; }
   .tile-cta { font-size:11px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#fff; margin-top:18px; display:inline-flex; align-items:center; gap:8px; }
   .tile-cta .arw { transition:transform .3s ease; }
@@ -188,28 +261,29 @@
   .schedule h2.section-title { color:var(--charcoal); }
   .schedule h2.section-title em { color:var(--forest); }
   .sched-head p { margin-top:14px; color:rgba(42,46,42,0.72); }
-  .sched-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:16px; position:relative; z-index:2; }
-  @media (max-width:860px){ .sched-grid{ grid-template-columns:repeat(2,1fr); } }
-  @media (max-width:520px){ .sched-grid{ grid-template-columns:1fr; } }
-  .day { background:var(--white); border:1px solid rgba(70,84,71,0.1); border-radius:20px; padding:28px 22px 26px; box-shadow:0 10px 30px rgba(53,61,53,0.05); transition:transform .3s cubic-bezier(.22,.61,.36,1), box-shadow .3s; }
-  .day:hover { transform:translateY(-5px); box-shadow:0 20px 44px rgba(53,61,53,0.1); }
-  .day-name { font-size:12px; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; color:var(--charcoal); margin-bottom:24px; padding-bottom:16px; border-bottom:1px solid rgba(70,84,71,0.1); display:flex; align-items:center; gap:9px; }
-  .day-name::before { content:''; width:6px; height:6px; border-radius:50%; background:var(--clay); flex-shrink:0; }
-  .slot { margin-bottom:28px; }
-  .slot:last-child { margin-bottom:0; }
-  .slot .time { font-family:'Hanken Grotesk',sans-serif; font-size:18px; font-weight:600; color:var(--charcoal); line-height:1.1; letter-spacing:0.01em; font-variant-numeric:tabular-nums; }
-  .slot .cls { font-size:10px; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:var(--moss); margin:8px 0 14px; line-height:1.5; }
-  .book-pill { display:inline-flex; align-items:center; gap:5px; white-space:nowrap;
-    background:var(--clay); color:#fff; padding:8px 13px; border-radius:22px;
-    font-size:10.5px; font-weight:700; letter-spacing:0.04em; transition:all .25s ease; }
-  .book-pill .area { color:rgba(255,255,255,0.82); font-weight:500; }
-  .book-pill.v-levels   { background:var(--forest); }
-  .book-pill.v-salamanca{ background:var(--clay); }
-  .book-pill.v-manifest { background:var(--charcoal); }
-  .book-pill.v-virgin   { background:var(--moss); color:var(--charcoal); }
-  .book-pill.v-virgin .area { color:rgba(53,61,53,0.72); }
-  .book-pill:hover { filter:brightness(0.92); transform:translateY(-2px); }
-  .sched-foot { text-align:center; margin-top:44px; font-size:13.5px; color:rgba(42,46,42,0.6); position:relative; z-index:2; }
+  /* minimal editorial list — one line per class, whole row books */
+  .sched-list { max-width:940px; margin:0 auto; position:relative; z-index:2; border-top:1px solid rgba(70,84,71,0.18); }
+  .s-row { display:grid; grid-template-columns:66px 150px 1fr auto; align-items:center; gap:26px; padding:25px 16px; border-bottom:1px solid rgba(70,84,71,0.12); transition:background .35s cubic-bezier(.22,.61,.36,1), padding .35s, box-shadow .35s; text-decoration:none; color:inherit; }
+  .s-row:hover { background:var(--white); padding-left:26px; padding-right:26px; box-shadow:0 14px 36px rgba(53,61,53,0.07); border-radius:14px; border-bottom-color:transparent; }
+  .s-day { font-family:'Cabin',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; color:var(--clay); }
+  .s-day.cont { color:rgba(70,84,71,0.28); font-weight:400; }
+  .s-time { font-family:'Hanken Grotesk',sans-serif; font-weight:600; font-size:18px; color:var(--charcoal); font-variant-numeric:tabular-nums; letter-spacing:0.005em; white-space:nowrap; }
+  .s-class { font-size:15px; color:var(--charcoal); font-weight:500; }
+  .s-class .s-sub { display:block; font-size:10px; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:var(--moss); margin-top:5px; }
+  .s-venue { justify-self:end; display:inline-flex; align-items:center; gap:10px; font-size:11.5px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--forest); white-space:nowrap; transition:color .2s; }
+  .s-venue .s-area { color:var(--moss); font-weight:400; text-transform:none; letter-spacing:0.02em; }
+  .s-row:hover .s-venue { color:var(--clay-dk); }
+  .s-venue .arw { color:var(--clay); font-size:15px; transition:transform .25s ease; }
+  .s-row:hover .arw { transform:translateX(6px); }
+  @media (max-width:720px){
+    .s-row { grid-template-columns:50px 1fr; gap:4px 16px; padding:20px 8px; }
+    .s-row:hover { padding-left:14px; padding-right:14px; }
+    .s-day { grid-row:1 / span 3; align-self:start; padding-top:4px; font-size:12px; letter-spacing:0.14em; }
+    .s-time { grid-column:2; font-size:16px; }
+    .s-class { grid-column:2; }
+    .s-venue { grid-column:2; justify-self:start; margin-top:9px; }
+  }
+  .sched-foot { text-align:center; margin-top:42px; font-size:13.5px; color:rgba(42,46,42,0.6); position:relative; z-index:2; }
   .sched-foot strong { color:var(--clay-dk); font-weight:600; }
 
   /* ─── PRIVATE SESSIONS ─── */
@@ -219,8 +293,8 @@
   .private-photo { position:relative; min-height:380px; background:url('assets/ph-private.jpg') center 32%/cover; }
   .private-photo .pv-tint { position:absolute; inset:0; background:linear-gradient(150deg, rgba(192,104,73,0.22), rgba(53,61,53,0.4)); }
   .private-body { padding:52px 50px; display:flex; flex-direction:column; justify-content:center; }
-  .private-body h2 { font-family:'Fira Sans',sans-serif; font-size:30px; font-weight:300; color:var(--charcoal); line-height:1.25; margin:14px 0 0; }
-  .private-body h2 em { font-style:italic; font-weight:400; color:var(--forest); }
+  .private-body h2 { font-family:'Cabin',sans-serif; font-size:30px; font-weight:300; color:var(--charcoal); line-height:1.25; margin:14px 0 0; }
+  .private-body h2 em { font-style:normal; font-weight:400; color:var(--forest); }
   .private-body p { margin-top:18px; color:rgba(42,46,42,0.76); font-size:15.5px; }
   .private-list { margin:22px 0 30px; display:flex; flex-direction:column; gap:11px; }
   .private-list div { font-size:14px; color:var(--charcoal); display:flex; gap:11px; align-items:flex-start; }
@@ -239,9 +313,9 @@
   /* Wayfinding sub-brand thumbnail (its own teal + terracotta identity) */
   .wf-thumb { position:relative; min-height:360px; background:#0e3b3b; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; overflow:hidden; }
   .wf-thumb::after { content:''; position:absolute; inset:0; background:radial-gradient(circle at 50% 38%, rgba(240,180,136,0.16), transparent 60%); }
-  .wf-mark { font-family:'Fira Sans',sans-serif; font-size:120px; font-weight:300; font-style:italic; color:#f0b488; line-height:0.8; position:relative; z-index:2; }
+  .wf-mark { font-family:'Cabin',sans-serif; font-size:120px; font-weight:300; font-style:italic; color:#f0b488; line-height:0.8; position:relative; z-index:2; }
   .wf-word { font-family:'Hanken Grotesk',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.42em; text-transform:uppercase; color:#f0b488; margin-top:20px; position:relative; z-index:2; }
-  .wf-sub { font-family:'Fira Sans',sans-serif; font-style:italic; font-size:15px; color:rgba(240,180,136,0.78); margin-top:10px; position:relative; z-index:2; }
+  .wf-sub { font-family:'Cabin',sans-serif; font-style:italic; font-size:15px; color:rgba(240,180,136,0.78); margin-top:10px; position:relative; z-index:2; }
   .cat-tag { position:absolute; z-index:3; top:22px; left:22px; font-size:10px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; padding:7px 15px; border-radius:20px; color:#fff; }
   .cat-retreat { background:var(--clay); }
   .cat-experience { background:var(--forest); }
@@ -249,28 +323,28 @@
   .cat-practice { background:var(--moss); }
   .event-body { padding:48px 48px; display:flex; flex-direction:column; justify-content:center; }
   .event-when { font-size:12px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--clay); }
-  .event-body h3 { font-family:'Fira Sans',sans-serif; font-size:31px; font-weight:300; color:var(--charcoal); margin:12px 0 6px; line-height:1.2; }
-  .event-body h3 em { font-style:italic; font-weight:400; color:var(--forest); }
-  .event-body .loc-line { font-family:'Fira Sans',sans-serif; font-style:italic; font-size:15px; color:var(--moss); margin-bottom:16px; }
+  .event-body h3 { font-family:'Cabin',sans-serif; font-size:31px; font-weight:300; color:var(--charcoal); margin:12px 0 6px; line-height:1.2; }
+  .event-body h3 em { font-style:normal; font-weight:400; color:var(--forest); }
+  .event-body .loc-line { font-family:'Cabin',sans-serif; font-style:italic; font-size:15px; color:var(--moss); margin-bottom:16px; }
   .event-body p { font-size:14.5px; color:rgba(42,46,42,0.72); margin-bottom:28px; }
-  .events-note { text-align:center; margin-top:38px; font-size:14px; color:rgba(42,46,42,0.6); font-style:italic; font-family:'Fira Sans',sans-serif; }
+  .events-note { text-align:center; margin-top:38px; font-size:14px; color:rgba(42,46,42,0.6); font-style:italic; font-family:'Cabin',sans-serif; }
 
   /* ─── QUOTE ─── */
   .quoteband { position:relative; padding:132px 0; text-align:center; overflow:hidden; background:var(--charcoal); }
   .quoteband .qb-bg { position:absolute; left:0; top:-12%; width:100%; height:124%; object-fit:cover; object-position:center 42%; z-index:0; will-change:transform; }
   .quoteband .qb-tint { position:absolute; inset:0; z-index:1; background:linear-gradient(180deg, rgba(70,84,71,0.84), rgba(53,61,53,0.9)); }
-  .quoteband .sanskrit { font-family:'Fira Sans',sans-serif; font-weight:300; font-size:30px; color:var(--sand); letter-spacing:0.04em; margin-bottom:8px; }
-  .quoteband .qb-trans { font-family:'Fira Sans',serif; font-style:italic; font-size:24px; color:#fff; margin:14px auto 0; max-width:640px; }
+  .quoteband .sanskrit { font-family:'Cabin',sans-serif; font-weight:300; font-size:30px; color:var(--sand); letter-spacing:0.04em; margin-bottom:8px; }
+  .quoteband .qb-trans { font-family:'Cabin',sans-serif; font-style:italic; font-size:24px; color:#fff; margin:14px auto 0; max-width:640px; }
   .quoteband .qb-inner { position:relative; z-index:4; max-width:900px; margin:0 auto; padding:0 32px; }
   .quoteband .eyebrow { color:#e3b9a6; }
-  .quoteband .mark { display:block; font-family:'Fira Sans',sans-serif; font-size:70px; color:var(--clay); line-height:0.4; margin:18px 0 10px; }
-  .quoteband blockquote { font-family:'Fira Sans',sans-serif; font-size:40px; line-height:1.32; color:#fff; font-weight:400; letter-spacing:-0.01em; }
+  .quoteband .mark { display:block; font-family:'Cabin',sans-serif; font-size:70px; color:var(--clay); line-height:0.4; margin:18px 0 10px; }
+  .quoteband blockquote { font-family:'Cabin',sans-serif; font-size:40px; line-height:1.32; color:#fff; font-weight:400; letter-spacing:-0.01em; }
   .quoteband blockquote em { font-style:italic; color:var(--sand); }
   .quoteband .attr { margin-top:26px; font-family:'Oooh Baby',cursive; font-size:24px; color:var(--clay); }
   @media (max-width:600px){ .quoteband blockquote{ font-size:27px; } .quoteband{ padding:96px 0; } }
 
   /* ─── ABOUT ─── */
-  .about { padding:108px 0; background:var(--white); }
+  .about { padding:66px 0 108px; background:var(--white); }
   .about-grid { display:grid; grid-template-columns:0.88fr 1.12fr; gap:66px; align-items:center; }
   @media (max-width:820px){ .about-grid{ grid-template-columns:1fr; gap:42px; } }
   .about-photo { border-radius:20px; overflow:hidden; aspect-ratio:4/5; }
@@ -290,21 +364,52 @@
   .corp-grid { display:grid; grid-template-columns:1.08fr 0.92fr; gap:62px; align-items:center; position:relative; z-index:4; }
   @media (max-width:820px){ .corp-grid{ grid-template-columns:1fr; gap:38px; } }
   .corp-teaser .eyebrow { color:#e3b9a6; }
-  .corp-teaser h2 { font-family:'Fira Sans',sans-serif; font-size:33px; font-weight:300; color:#fff; line-height:1.22; margin:14px 0 0; }
-  .corp-teaser h2 em { font-style:italic; font-weight:400; color:var(--sand); }
+  .corp-teaser h2 { font-family:'Cabin',sans-serif; font-size:33px; font-weight:300; color:#fff; line-height:1.22; margin:14px 0 0; }
+  .corp-teaser h2 em { font-style:normal; font-weight:400; color:var(--sand); }
   .corp-teaser p { margin-top:18px; color:rgba(234,230,217,0.86); max-width:480px; font-size:16px; }
   .corp-photo { border-radius:18px; overflow:hidden; aspect-ratio:4/3; }
   .corp-photo img { position:relative; width:100%; height:120%; top:-10%; object-fit:cover; object-position:center 30%; will-change:transform; }
 
-  /* ─── LEAD MAGNET ─── */
-  .leadmagnet { padding:100px 0; background:var(--white); }
+  /* ─── CLIENTS MINI (home corp marquee) ─── */
+  .clients-mini { background:var(--white); padding:42px 0 48px; overflow:hidden; border-bottom:1px solid rgba(70,84,71,0.08); }
+  .clients-mini .cm-eyebrow { text-align:center; font-size:11px; font-weight:300; letter-spacing:0.28em; text-transform:uppercase; color:var(--moss); margin-bottom:26px; }
+  .cm-track { display:flex; width:max-content; animation:cmmarq 48s linear infinite; }
+  .clients-mini:hover .cm-track { animation-play-state:paused; }
+  .cm-track img { height:36px; width:auto; object-fit:contain; margin:0 30px; opacity:0.5; filter:grayscale(1); transition:opacity .25s, filter .25s; }
+  .clients-mini:hover .cm-track img:hover { opacity:1; filter:grayscale(0); }
+  @keyframes cmmarq { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+  @media (prefers-reduced-motion:reduce){ .cm-track{ animation:none; justify-content:center; flex-wrap:wrap; gap:18px 0; } }
+
+  /* ─── KIND WORDS (testimonials) ─── */
+  .kind { padding:104px 0; background:var(--white); }
+  .kind-head { text-align:center; max-width:620px; margin:0 auto 50px; }
+  .kind-head p { margin-top:14px; color:rgba(42,46,42,0.72); }
+  .kw-carousel { position:relative; max-width:780px; margin:0 auto; }
+  .kw-viewport { overflow:hidden; border-radius:18px; }
+  .kw-track { display:flex; align-items:stretch; transition:transform .5s cubic-bezier(.22,.61,.36,1); }
+  .kw-card { flex:0 0 100%; background:var(--paper); border:1px solid rgba(70,84,71,0.1); border-radius:18px; padding:44px 50px 40px; text-align:center; display:flex; flex-direction:column; justify-content:center; }
+  @media (max-width:600px){ .kw-card{ padding:34px 26px 30px; } }
+  .kw-card .kw-mark { font-family:'Cabin',sans-serif; font-size:56px; line-height:0.4; color:var(--clay); opacity:0.5; display:block; margin:0 0 14px; height:30px; }
+  .kw-stars { color:var(--clay); font-size:14px; letter-spacing:3px; margin-bottom:16px; }
+  .kw-card p { font-size:16.5px; color:var(--ink); line-height:1.74; max-width:600px; margin:0 auto; }
+  .kw-name { margin-top:20px; font-family:'Cabin',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--forest); }
+  .kw-arrow { position:absolute; top:50%; transform:translateY(-50%); width:46px; height:46px; border-radius:50%; border:1px solid rgba(70,84,71,0.2); background:var(--white); color:var(--forest); font-size:22px; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all .2s; box-shadow:0 6px 18px rgba(53,61,53,0.1); z-index:3; }
+  .kw-arrow:hover { background:var(--clay); color:#fff; border-color:var(--clay); }
+  .kw-prev { left:-22px; } .kw-next { right:-22px; }
+  @media (max-width:840px){ .kw-prev{ left:8px; } .kw-next{ right:8px; } }
+  .kw-dots { display:flex; gap:9px; justify-content:center; margin-top:26px; }
+  .kw-dot { width:9px; height:9px; border-radius:50%; border:none; background:rgba(70,84,71,0.22); cursor:pointer; transition:all .2s; padding:0; }
+  .kw-dot.active { background:var(--clay); transform:scale(1.25); }
+
+  /* ─── GET IN TOUCH ─── */
+  .leadmagnet { padding:100px 0 58px; background:var(--white); }
   .lm-card { border-radius:22px; overflow:hidden; display:grid; grid-template-columns:1fr 1fr; border:1px solid rgba(70,84,71,0.14); background:var(--paper); box-shadow:0 18px 50px rgba(53,61,53,0.08); }
   @media (max-width:820px){ .lm-card{ grid-template-columns:1fr; } }
   .lm-photo { position:relative; min-height:320px; background:url('assets/ph-leadmagnet.jpg') center 40%/cover; }
   .lm-photo .lm-tint { position:absolute; inset:0; background:linear-gradient(140deg, rgba(192,104,73,0.3), rgba(53,61,53,0.46)); }
   .lm-body { padding:52px 50px; }
-  .lm-body h2 { font-family:'Fira Sans',sans-serif; font-size:29px; font-weight:300; color:var(--charcoal); line-height:1.25; margin:14px 0 0; }
-  .lm-body h2 em { font-style:italic; font-weight:400; color:var(--clay); }
+  .lm-body h2 { font-family:'Cabin',sans-serif; font-size:29px; font-weight:300; color:var(--charcoal); line-height:1.25; margin:14px 0 0; }
+  .lm-body h2 em { font-style:normal; font-weight:400; color:var(--clay); }
   .lm-body p { margin:16px 0 24px; color:rgba(42,46,42,0.74); }
   .field { display:flex; flex-direction:column; gap:11px; max-width:400px; }
   .field input { padding:15px 18px; border-radius:30px; border:1px solid rgba(70,84,71,0.25); font-family:'Hanken Grotesk',sans-serif; font-size:14px; background:var(--paper); color:var(--ink); }
@@ -319,8 +424,8 @@
   .touch-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:stretch; }
   @media (max-width:820px){ .touch-grid{ grid-template-columns:1fr; } }
   .touch-card { background:var(--white); border:1px solid rgba(70,84,71,0.12); border-radius:18px; padding:38px 36px; display:flex; flex-direction:column; }
-  .touch-card h3 { font-family:'Fira Sans',sans-serif; font-size:22px; font-weight:300; color:var(--charcoal); }
-  .touch-card h3 em { font-style:italic; font-weight:400; color:var(--forest); }
+  .touch-card h3 { font-family:'Cabin',sans-serif; font-size:22px; font-weight:300; color:var(--charcoal); }
+  .touch-card h3 em { font-style:normal; font-weight:400; color:var(--forest); }
   .touch-card .sub { font-size:13.5px; color:rgba(42,46,42,0.7); margin:8px 0 22px; }
   .touch-card form { display:flex; flex-direction:column; gap:11px; }
   .touch-card input { padding:14px 18px; border-radius:28px; border:1px solid rgba(70,84,71,0.25); font-family:'Hanken Grotesk',sans-serif; font-size:14px; background:var(--paper); color:var(--ink); }
@@ -392,213 +497,180 @@
 
 <!-- ANNOUNCEMENT -->
 <div class="annc" id="annc">
-  <div class="annc-track"><a href="retreats/wayfinding2026/"><span class="annc-k">Upcoming retreat</span> <strong>Wayfinding</strong> · 9–11 Oct 2026 · Pumula, South Coast KZN <span class="more">Find out more →</span> <span class="sep">✺</span></a><a href="retreats/wayfinding2026/"><span class="annc-k">Upcoming retreat</span> <strong>Wayfinding</strong> · 9–11 Oct 2026 · Pumula, South Coast KZN <span class="more">Find out more →</span> <span class="sep">✺</span></a><a href="retreats/wayfinding2026/"><span class="annc-k">Upcoming retreat</span> <strong>Wayfinding</strong> · 9–11 Oct 2026 · Pumula, South Coast KZN <span class="more">Find out more →</span> <span class="sep">✺</span></a><a href="retreats/wayfinding2026/"><span class="annc-k">Upcoming retreat</span> <strong>Wayfinding</strong> · 9–11 Oct 2026 · Pumula, South Coast KZN <span class="more">Find out more →</span> <span class="sep">✺</span></a><a href="retreats/wayfinding2026/"><span class="annc-k">Upcoming retreat</span> <strong>Wayfinding</strong> · 9–11 Oct 2026 · Pumula, South Coast KZN <span class="more">Find out more →</span> <span class="sep">✺</span></a><a href="retreats/wayfinding2026/"><span class="annc-k">Upcoming retreat</span> <strong>Wayfinding</strong> · 9–11 Oct 2026 · Pumula, South Coast KZN <span class="more">Find out more →</span> <span class="sep">✺</span></a><a href="retreats/wayfinding2026/"><span class="annc-k">Upcoming retreat</span> <strong>Wayfinding</strong> · 9–11 Oct 2026 · Pumula, South Coast KZN <span class="more">Find out more →</span> <span class="sep">✺</span></a><a href="retreats/wayfinding2026/"><span class="annc-k">Upcoming retreat</span> <strong>Wayfinding</strong> · 9–11 Oct 2026 · Pumula, South Coast KZN <span class="more">Find out more →</span> <span class="sep">✺</span></a></div>
+  <div class="annc-track"><a href="Retreats/wayfinding2026/"><span class="annc-k">Upcoming retreat</span> <strong>Wayfinding</strong> · 9–11 Oct 2026 · Pumula, South Coast KZN <span class="more">Find out more →</span> <span class="sep">✺</span></a><a href="Retreats/wayfinding2026/"><span class="annc-k">Upcoming retreat</span> <strong>Wayfinding</strong> · 9–11 Oct 2026 · Pumula, South Coast KZN <span class="more">Find out more →</span> <span class="sep">✺</span></a><a href="Retreats/wayfinding2026/"><span class="annc-k">Upcoming retreat</span> <strong>Wayfinding</strong> · 9–11 Oct 2026 · Pumula, South Coast KZN <span class="more">Find out more →</span> <span class="sep">✺</span></a><a href="Retreats/wayfinding2026/"><span class="annc-k">Upcoming retreat</span> <strong>Wayfinding</strong> · 9–11 Oct 2026 · Pumula, South Coast KZN <span class="more">Find out more →</span> <span class="sep">✺</span></a><a href="Retreats/wayfinding2026/"><span class="annc-k">Upcoming retreat</span> <strong>Wayfinding</strong> · 9–11 Oct 2026 · Pumula, South Coast KZN <span class="more">Find out more →</span> <span class="sep">✺</span></a><a href="Retreats/wayfinding2026/"><span class="annc-k">Upcoming retreat</span> <strong>Wayfinding</strong> · 9–11 Oct 2026 · Pumula, South Coast KZN <span class="more">Find out more →</span> <span class="sep">✺</span></a><a href="Retreats/wayfinding2026/"><span class="annc-k">Upcoming retreat</span> <strong>Wayfinding</strong> · 9–11 Oct 2026 · Pumula, South Coast KZN <span class="more">Find out more →</span> <span class="sep">✺</span></a><a href="Retreats/wayfinding2026/"><span class="annc-k">Upcoming retreat</span> <strong>Wayfinding</strong> · 9–11 Oct 2026 · Pumula, South Coast KZN <span class="more">Find out more →</span> <span class="sep">✺</span></a></div>
   <button class="x" id="annc-x" aria-label="Dismiss">×</button>
 </div>
 <!-- ═══ NAV ═══ -->
-<nav class="nav">
+<nav class="nav" id="nav">
   <div class="nav-inner">
-    <a href="#top" aria-label="Magdarie van Staden home"><img class="brand-logo" src="assets/logo-trim.png" alt="Magdarie van Staden"></a>
+    <a href="index.html" aria-label="Magdarie van Staden home">
+      <img class="brand-logo light" src="assets/logo-light.png" alt="Magdarie van Staden">
+      <img class="brand-logo dark" src="assets/logo-trim.png" alt="Magdarie van Staden">
+    </a>
     <div class="nav-links">
-      <a href="#schedule">Practice</a>
-      <a href="#events">Events</a>
+      <div class="nav-item has-drop">
+        <a href="#schedule">Practice</a>
+        <div class="dropdown"><a href="#schedule">Weekly schedule</a><a href="private-sessions.html">Private sessions</a></div>
+      </div>
+      <div class="nav-item has-drop">
+        <a href="#events">Events</a>
+        <div class="dropdown"><a href="#events">Upcoming events</a><a href="Retreats/wayfinding2026/index.html">Wayfinding Retreat</a></div>
+      </div>
       <a href="corporate.html">Corporate</a>
+      <div class="nav-item has-drop">
+        <a href="breathe.html">Toolbox</a>
+        <div class="dropdown"><a href="breathe.html">Breathe app</a></div>
+      </div>
       <a href="#about">About</a>
       <a href="#touch" class="nav-cta">Get in touch</a>
     </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
+</nav>
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile">
+  <span class="mm-head">Practice</span>
+  <a href="#schedule">Weekly schedule</a>
+  <a href="private-sessions.html">Private sessions</a>
+  <span class="mm-head">Events</span>
+  <a href="#events">Upcoming events</a>
+  <a href="Retreats/wayfinding2026/index.html">Wayfinding Retreat</a>
+  <a href="corporate.html">Corporate</a>
+  <span class="mm-head">Toolbox</span>
+  <a href="breathe.html">Breathe app</a>
+  <a href="#about">About</a>
+  <a href="#touch" class="mm-cta">Get in touch</a>
 </nav>
 
 <!-- ═══ HERO ═══ -->
 <header class="hero" id="top">
-  <div class="hero-left">
-    <div class="wrap hero-inner" style="padding-left:40px;">
-      <h1>Come home to <em>yourself.</em></h1>
-      <p class="pos">A return to your body, to presence, through intelligent, embodied movement and the wisdom of natural rhythms.</p>
-      <div class="hero-actions">
-        <a href="#begin" class="btn btn-forest">Where to begin</a>
-        <a href="#schedule" class="btn btn-moss">See the schedule</a>
-      </div>
+  <img class="hero-img" src="assets/ph-hero-face.jpg" alt="Magdarie van Staden in an arm balance by the sea" data-parallax data-speed="0.05">
+  <div class="hero-scrim"></div>
+  <div class="wrap hero-content">
+    <h1>Come home <br class="mbr">to yourself.</h1>
+    <p class="pos">A return to your body, to presence, through intelligent, embodied movement that builds strength, settles the nervous system, and changes how you move through the rest of your life.</p>
+    <div class="hero-actions">
+      <a href="#events" class="btn btn-primary">Upcoming events</a>
+      <a href="#schedule" class="btn btn-hero-ghost">Weekly schedule</a>
     </div>
-    <div class="hero-scroll" aria-hidden="true"><span class="ln"></span><span>Scroll</span></div>
   </div>
-  <div class="hero-right grain">
-    <img class="hero-img" src="assets/ph-hero.jpg" alt="Magdarie in tree pose at sunrise by the sea" data-parallax data-speed="0.10">
-  </div>
+  <div class="hero-scroll" aria-hidden="true"><span class="ln"></span><span>Scroll</span></div>
 </header>
 
-<!-- ═══ WHERE TO BEGIN ═══ -->
+<!-- ═══ WHERE TO BEGIN (offerings) ═══ -->
 <section class="pathways" id="begin">
-  <img class="path-watermark" src="assets/enso.svg" alt="" aria-hidden="true">
   <div class="wrap">
     <div class="path-head">
-      <div class="eyebrow">Where to begin</div>
-      <h2 class="section-title">You're in the <em>right place</em> if…</h2>
-      <p>…you're looking for a regular practice that actually meets you, deep one-to-one work, real rest for a frazzled nervous system, or a retreat to come home to yourself. Whether you're exhausted, strong-but-tight, brand new, or somewhere in between — start here, just as you are.</p>
+      <div class="eyebrow">What I offer</div>
+      <h2 class="section-title">Where would you like <em>to begin?</em></h2>
+      <p>However you want to practise — hover to see more, tap to explore.</p>
     </div>
-    <div class="tiles">
-
-      <a href="#schedule" class="tile">
-        <div class="tile-bg" style="background-image:url('assets/ph-tile-new.jpg');" data-parallax data-speed="0.06"></div>
-        <div class="tile-scrim"></div>
-        <div class="tile-accent" style="background:var(--clay);"></div>
-        <div class="tile-inner">
-          <div class="tile-eyebrow">Begin &amp; sustain</div>
-          <div class="tile-title">Find a regular practice</div>
-          <div class="tile-desc">Whether you're brand new or finding your way back, my weekly classes give you a steady, all-levels rhythm to return to — accessible, unhurried, and never one-size-fits-all.</div>
-          <span class="tile-cta">See the class schedule <span class="arw">→</span></span>
-        </div>
+    <div class="offers6">
+      <a class="offer6" href="#schedule">
+        <div class="o6bg" style="background-image:url('assets/tile-group.jpg')"></div><div class="o6scrim"></div>
+        <h3>Group Classes</h3>
+        <div class="od">Weekly studio classes across Westville, Durban North &amp; Umhlanga — all levels welcome.</div>
+        <span class="oa">See the schedule →</span>
       </a>
-
-      <a href="private-sessions.html" class="tile">
-        <div class="tile-bg" style="background-image:url('assets/ph-tile-deeper.jpg');" data-parallax data-speed="0.06"></div>
-        <div class="tile-scrim"></div>
-        <div class="tile-accent" style="background:var(--forest);"></div>
-        <div class="tile-inner">
-          <div class="tile-eyebrow">Go deeper</div>
-          <div class="tile-title">Practice 1:1</div>
-          <div class="tile-desc">Private sessions built entirely around your body, history and goals — trauma-informed and nervous-system aware. Space to go deeper than a class allows, fully met and supported in your own practice.</div>
-          <span class="tile-cta">Explore private sessions <span class="arw">→</span></span>
-        </div>
+      <a class="offer6" href="private-sessions.html">
+        <div class="o6bg" style="background-image:url('assets/ph-tile-deeper.jpg')"></div><div class="o6scrim"></div>
+        <h3>Private Sessions</h3>
+        <div class="od">1:1 or private groups — yoga, sound bath and lifestyle coaching, shaped entirely around you.</div>
+        <span class="oa">Explore privates →</span>
       </a>
-
-      <a href="#touch" class="tile">
-        <div class="tile-bg" style="background-image:url('assets/ph-tile-train.jpg'); background-position:center 28%;" data-parallax data-speed="0.06"></div>
-        <div class="tile-scrim"></div>
-        <div class="tile-accent" style="background:var(--charcoal);"></div>
-        <div class="tile-inner">
-          <div class="tile-eyebrow">Training programmes</div>
-          <div class="tile-title">Train &amp; deepen</div>
-          <div class="tile-desc">Teacher training (YTT), mentorship and courses for those who want to study the practice in depth — to teach one day, or simply to understand it from the inside.</div>
-          <span class="tile-cta">Explore training <span class="arw">→</span></span>
-        </div>
+      <a class="offer6" href="#events">
+        <div class="o6bg" style="background-image:url('assets/tile-events.jpg')"></div><div class="o6scrim"></div>
+        <h3>Events, Workshops &amp; Retreats</h3>
+        <div class="od">Sound baths, workshops and seasonal retreats — deliberate time to slow down and go deeper.</div>
+        <span class="oa">What's on →</span>
       </a>
-
+      <a class="offer6" href="corporate.html">
+        <div class="o6bg" style="background-image:url('assets/ph-corporate.jpg')"></div><div class="o6scrim"></div>
+        <h3>Corporate Sessions</h3>
+        <div class="od">On-site or online yoga, breathwork and sound for teams — nervous-system wellbeing at work.</div>
+        <span class="oa">For teams →</span>
+      </a>
+      <a class="offer6" href="#touch">
+        <div class="o6bg" style="background-image:url('assets/tile-train.jpg')"></div><div class="o6scrim"></div>
+        <h3>Teacher Training &amp; Courses</h3>
+        <div class="od">YTT, mentorship and yoga courses — for aspiring teachers and devoted students who want to go further.</div>
+        <span class="oa">Enquire →</span>
+      </a>
+      <a class="offer6" href="#touch">
+        <div class="o6bg" style="background-image:url('assets/tile-community.jpg')"></div><div class="o6scrim"></div>
+        <h3>Online Community</h3>
+        <div class="od">Practise between sessions and stay close to what's unfolding — classes, sound baths and retreats.</div>
+        <span class="oa">Join the circle →</span>
+      </a>
     </div>
   </div>
 </section>
-
-<!-- ═══ WHAT I TEACH ═══ -->
-<section class="modalities" id="teach">
-  <div class="wrap">
-    <div class="mod-head">
-      <div class="eyebrow">What I teach</div>
-      <h2 class="section-title">One practice, <em>many doorways.</em></h2>
-      <p>A curated journey of what you can experience with me — strength and stillness, science and soul, woven to where you are on any given day.</p>
-    </div>
-    <div class="journey3">
-      <div class="jgroup">
-        <span class="jicon"><svg viewBox="0 0 24 24"><circle cx="12" cy="4.5" r="2"/><path d="M12 6.6v6.2M12 8.4l-4.2 2.8M12 8.4l4.2 2.8M12 12.8l-3 5.4M12 12.8l3 5.4"/></svg></span>
-        <div class="jh">Move with intelligence</div>
-        <div class="js">Yoga, strength and mobility — a body that lasts.</div>
-        <ul>
-          <li>Traditional Hatha Yoga</li>
-          <li>Strong, vigorous Vinyasa &amp; alignment</li>
-          <li>Qigong</li>
-          <li>Functional movement</li>
-          <li>Somatic &amp; fascia-focused work</li>
-          <li>Hands-on assists &amp; adjustments</li>
-        </ul>
-      </div>
-      <div class="jgroup">
-        <span class="jicon"><svg viewBox="0 0 24 24"><path d="M2 12h4l2.2-6.5L12.5 19l2.3-7H22"/></svg></span>
-        <div class="jh">Rewire &amp; restore</div>
-        <div class="js">Settle the nervous system into deep, dynamic rest.</div>
-        <ul>
-          <li>Yin Yoga</li>
-          <li>Nervous system rewiring</li>
-          <li>Vagal toning</li>
-          <li>Trauma-aware practice</li>
-          <li>Deep rest — yoga nidra (non-sleep deep rest)</li>
-        </ul>
-      </div>
-      <div class="jgroup">
-        <span class="jicon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.3"/><path d="M7.6 7.6a6.2 6.2 0 0 0 0 8.8M16.4 7.6a6.2 6.2 0 0 1 0 8.8"/></svg></span>
-        <div class="jh">Breath, stillness &amp; sound</div>
-        <div class="js">Quiet the mind and widen presence.</div>
-        <ul>
-          <li>Yogic breathwork (pranayama)</li>
-          <li>Meditation &amp; mindfulness</li>
-          <li>Deep-state sound journeys</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ BRAND BAND (divider) ═══ -->
-<div class="brand-band grain">
-  <img class="bb-bg" src="assets/ph-corporate.jpg" alt="" aria-hidden="true">
-  <div class="bb-tint"></div>
-  <div class="wrap">
-    <img class="bb-enso" src="assets/enso.svg" alt="" aria-hidden="true">
-    <div class="bb-line">where strength <em>meets</em> ease</div>
-  </div>
-</div>
 
 <!-- ═══ SCHEDULE ═══ -->
 <section class="schedule" id="schedule">
   <div class="wrap">
     <div class="sched-head">
       <div class="eyebrow">Weekly classes</div>
-      <h2 class="section-title">Find your place <em>(on the mat).</em></h2>
-      <p>A weekly rhythm to return to — come as you are, as often as you can. Classes run across Westville, Durban North and Umhlanga; tap a venue to book your spot.</p>
+      <h2 class="section-title">Find your place <br class="mbr"><em>(on the mat).</em></h2>
+      <p>A weekly rhythm to return to — come as you are, as often as you can. Classes run across Westville, Durban North and Umhlanga; tap any class to book your spot.</p>
     </div>
-    <div class="sched-grid">
-      <div class="day">
-        <div class="day-name">Monday</div>
-        <div class="slot">
-          <div class="time">07:30 – 08:30</div>
-          <div class="cls">Everyday Yoga · All Levels</div>
-          <a class="book-pill v-levels" href="https://levelsfitness.co.za" target="_blank" rel="noopener">Levels <span class="area">· Durban North</span></a>
-        </div>
-      </div>
-      <div class="day">
-        <div class="day-name">Tuesday</div>
-        <div class="slot">
-          <div class="time">17:15 – 18:30</div>
-          <div class="cls">Hatha Yoga</div>
-          <a class="book-pill v-salamanca" href="https://bookamat.co/embed/magdarie-van-staden-yoga" target="_blank" rel="noopener">Salamanca <span class="area">· Westville</span></a>
-        </div>
-      </div>
-      <div class="day">
-        <div class="day-name">Wednesday</div>
-        <div class="slot">
-          <div class="time">05:30 – 06:30</div>
-          <div class="cls">Hatha Yoga</div>
-          <a class="book-pill v-manifest" href="https://www.manifestyoga.co.za/service-page/hatha-yoga?referral=service_list_widget" target="_blank" rel="noopener">Manifest <span class="area">· Umhlanga</span></a>
-        </div>
-        <div class="slot">
-          <div class="time">07:30 – 08:30</div>
-          <div class="cls">Everyday Yoga · All Levels</div>
-          <a class="book-pill v-levels" href="https://levelsfitness.co.za" target="_blank" rel="noopener">Levels <span class="area">· Durban North</span></a>
-        </div>
-      </div>
-      <div class="day">
-        <div class="day-name">Thursday</div>
-        <div class="slot">
-          <div class="time">17:15 – 18:30</div>
-          <div class="cls">Vinyasa Yoga</div>
-          <a class="book-pill v-salamanca" href="https://bookamat.co/embed/magdarie-van-staden-yoga" target="_blank" rel="noopener">Salamanca <span class="area">· Westville</span></a>
-        </div>
-      </div>
-      <div class="day">
-        <div class="day-name">Friday</div>
-        <div class="slot">
-          <div class="time">05:30 – 06:30</div>
-          <div class="cls">Hatha Yoga</div>
-          <a class="book-pill v-manifest" href="https://www.manifestyoga.co.za/service-page/hatha-yoga?referral=service_list_widget" target="_blank" rel="noopener">Manifest <span class="area">· Umhlanga</span></a>
-        </div>
-        <div class="slot">
-          <div class="time">08:15 – 09:00</div>
-          <div class="cls">Hot Flow · 45 min</div>
-          <a class="book-pill v-virgin" href="https://www.virginactive.co.za/bookings" target="_blank" rel="noopener">Virgin Active <span class="area">· Umhlanga</span></a>
-        </div>
-      </div>
+    <div class="sched-list">
+      <a class="s-row" href="https://levelsfitness.co.za" target="_blank" rel="noopener">
+        <div class="s-day">Mon</div>
+        <div class="s-time">07:30 – 08:30</div>
+        <div class="s-class">Everyday Yoga<span class="s-sub">All levels</span></div>
+        <div class="s-venue">Levels <span class="s-area">Durban North</span><span class="arw">→</span></div>
+      </a>
+      <a class="s-row" href="https://bookamat.co/embed/magdarie-van-staden-yoga" target="_blank" rel="noopener">
+        <div class="s-day">Tue</div>
+        <div class="s-time">17:15 – 18:30</div>
+        <div class="s-class">Hatha Yoga</div>
+        <div class="s-venue">Salamanca <span class="s-area">Westville</span><span class="arw">→</span></div>
+      </a>
+      <a class="s-row" href="https://www.manifestyoga.co.za/service-page/hatha-yoga?referral=service_list_widget" target="_blank" rel="noopener">
+        <div class="s-day">Wed</div>
+        <div class="s-time">05:30 – 06:30</div>
+        <div class="s-class">Hatha Yoga</div>
+        <div class="s-venue">Manifest <span class="s-area">Umhlanga</span><span class="arw">→</span></div>
+      </a>
+      <a class="s-row" href="https://levelsfitness.co.za" target="_blank" rel="noopener">
+        <div class="s-day cont">Wed</div>
+        <div class="s-time">07:30 – 08:30</div>
+        <div class="s-class">Everyday Yoga<span class="s-sub">All levels</span></div>
+        <div class="s-venue">Levels <span class="s-area">Durban North</span><span class="arw">→</span></div>
+      </a>
+      <a class="s-row" href="https://bookamat.co/embed/magdarie-van-staden-yoga" target="_blank" rel="noopener">
+        <div class="s-day">Thu</div>
+        <div class="s-time">17:15 – 18:30</div>
+        <div class="s-class">Vinyasa Yoga</div>
+        <div class="s-venue">Salamanca <span class="s-area">Westville</span><span class="arw">→</span></div>
+      </a>
+      <a class="s-row" href="https://www.manifestyoga.co.za/service-page/hatha-yoga?referral=service_list_widget" target="_blank" rel="noopener">
+        <div class="s-day">Fri</div>
+        <div class="s-time">05:30 – 06:30</div>
+        <div class="s-class">Hatha Yoga</div>
+        <div class="s-venue">Manifest <span class="s-area">Umhlanga</span><span class="arw">→</span></div>
+      </a>
+      <a class="s-row" href="https://www.virginactive.co.za/bookings" target="_blank" rel="noopener">
+        <div class="s-day cont">Fri</div>
+        <div class="s-time">08:15 – 09:00</div>
+        <div class="s-class">Hot Flow<span class="s-sub">45 min</span></div>
+        <div class="s-venue">Virgin Active <span class="s-area">Gateway</span><span class="arw">→</span></div>
+      </a>
     </div>
-    <div class="sched-foot">Each venue books on its own platform — <strong>tap the studio name</strong> to reserve your spot.</div>
+    <div class="sched-foot">Each venue books on its own platform — <strong>tap a class</strong> to reserve your spot.</div>
   </div>
 </section>
+
+<!-- ═══ BRAND BAND (divider) ═══ -->
+<div class="brand-band grain">
+  <img class="bb-bg" src="assets/brand-chaturanga.jpg" alt="" aria-hidden="true">
+  <div class="bb-tint"></div>
+  <div class="wrap">
+    <img class="bb-enso" src="assets/enso.svg" alt="" aria-hidden="true">
+    <div class="bb-line">where strength <em>meets</em> ease</div>
+  </div>
+</div>
 
 <!-- ═══ PRIVATE SESSIONS ═══ -->
 <section class="private" id="private">
@@ -615,8 +687,7 @@
           <div><span class="dot"></span>Optional sound bath, as a standalone or alongside your practice.</div>
         </div>
         <div class="private-actions">
-          <a href="private-sessions.html" class="btn btn-primary">Begin with an intake</a>
-          <a href="private-sessions.html#book" class="btn btn-ghost">Book a discovery call</a>
+          <a href="private-sessions.html#book" class="btn btn-primary">Book a discovery call</a>
         </div>
       </div>
     </div>
@@ -646,7 +717,7 @@
       </div>
     </a>
 
-    <a class="event-feature" href="retreats/wayfinding2026/" style="text-decoration:none;">
+    <a class="event-feature" href="Retreats/wayfinding2026/" style="text-decoration:none;">
       <div class="event-thumb">
         <div class="cat-tag cat-retreat">Retreat</div>
         <img src="assets/event-wayfinding.jpg" alt="Wayfinding Retreat — 9–11 October 2026, Pumula">
@@ -678,15 +749,11 @@
   </div>
 </section>
 
-<!-- ═══ QUOTE ═══ -->
-<section class="quoteband grain">
-  <img class="qb-bg" src="assets/ph-quote.jpg" alt="" data-parallax data-speed="0.16">
-  <div class="qb-tint"></div>
-  <div class="qb-inner">
-    <div class="sanskrit">स्थिर सुखम् आसनम्</div>
-    <div class="eyebrow">Sthira sukham āsanam · Yoga Sūtra 2.46</div>
-    <div class="qb-trans">&ldquo;The posture should be steady, and at ease.&rdquo;</div>
-    <blockquote>It is the same balance your nervous system is asking for — <em>enough strength to hold you, enough softness to let you rest.</em> The practice isn’t forcing the posture, or your life. It is finding the place where effort and ease finally meet.</blockquote>
+<!-- ═══ CLIENTS (mini marquee) ═══ -->
+<section class="clients-mini" aria-label="Teams I have worked with">
+  <div class="cm-eyebrow">Some of the teams I've worked with</div>
+  <div class="cm-track">
+    <img src="assets/clients/c1.png" alt="Client logo"><img src="assets/clients/c2.png" alt="Client logo"><img src="assets/clients/c3.png" alt="Client logo"><img src="assets/clients/c4.png" alt="Client logo"><img src="assets/clients/c5.png" alt="Client logo"><img src="assets/clients/c6.png" alt="Client logo"><img src="assets/clients/c7.png" alt="Client logo"><img src="assets/clients/c8.png" alt="Client logo"><img src="assets/clients/c9.png" alt="Client logo"><img src="assets/clients/c10.png" alt="Client logo"><img src="assets/clients/c11.png" alt="Client logo"><img src="assets/clients/c12.png" alt="Client logo"><img src="assets/clients/c13.png" alt="Client logo"><img src="assets/clients/c14.png" alt="Client logo"><img src="assets/clients/c15.png" alt="Client logo"><img src="assets/clients/c1.png" alt="Client logo"><img src="assets/clients/c2.png" alt="Client logo"><img src="assets/clients/c3.png" alt="Client logo"><img src="assets/clients/c4.png" alt="Client logo"><img src="assets/clients/c5.png" alt="Client logo"><img src="assets/clients/c6.png" alt="Client logo"><img src="assets/clients/c7.png" alt="Client logo"><img src="assets/clients/c8.png" alt="Client logo"><img src="assets/clients/c9.png" alt="Client logo"><img src="assets/clients/c10.png" alt="Client logo"><img src="assets/clients/c11.png" alt="Client logo"><img src="assets/clients/c12.png" alt="Client logo"><img src="assets/clients/c13.png" alt="Client logo"><img src="assets/clients/c14.png" alt="Client logo"><img src="assets/clients/c15.png" alt="Client logo">
   </div>
 </section>
 
@@ -722,11 +789,116 @@
       <p>So that's how I teach. Strong, dynamic movement and deep, quiet stillness, often in the same hour. My classes are trauma-informed and nervous-system aware, which is really just a careful way of saying <em>you're safe here, exactly as you are.</em> There's no perfect posture to reach and no flexibility to earn first. Only your body, your breath, and a place to come back to.</p>
       <p>Off the mat, you'll find me in the ocean — surfing is my other great teacher — or on some kind of a mission with my pug, Melon, who is, objectively, the cutest.</p>
       <div class="about-sign">x Magdarie van Staden</div>
+      <div class="about-cred">500hr Yoga Alliance Certified Advanced Trained Yoga Teacher<br>Over 10 years' experience</div>
       <div class="about-badges">
         <img src="assets/ya-eryt500.png" alt="E-RYT 500 · Yoga Alliance">
         <img src="assets/ya-rys200.png" alt="RYS 200 · Yoga Alliance">
         <img src="assets/ya-yacep.png" alt="YACEP · Yoga Alliance">
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHAT I TEACH ═══ -->
+<section class="modalities" id="teach">
+  <div class="wrap">
+    <div class="mod-head">
+      <div class="eyebrow">What I teach</div>
+      <h2 class="section-title">One practice, <em>many doorways.</em></h2>
+      <p>A curated journey of what you can experience with me — strength and stillness, science and soul, woven to where you are on any given day.</p>
+    </div>
+    <div class="journey3">
+      <div class="jgroup">
+        <span class="jicon"><img src="assets/ic-move.png" alt=""></span>
+        <div class="jh">Move with intelligence</div>
+        <div class="js">Yoga, strength and mobility — a body that lasts.</div>
+        <ul>
+          <li>Traditional Hatha Yoga</li>
+          <li>Strong, vigorous Vinyasa &amp; alignment</li>
+          <li>Qigong</li>
+          <li>Functional movement</li>
+          <li>Somatic &amp; fascia-focused work</li>
+          <li>Hands-on assists &amp; adjustments</li>
+        </ul>
+      </div>
+      <div class="jgroup">
+        <span class="jicon"><img src="assets/ic-restore.png" alt=""></span>
+        <div class="jh">Rewire &amp; restore</div>
+        <div class="js">Settle the nervous system into deep, dynamic rest.</div>
+        <ul>
+          <li>Yin Yoga</li>
+          <li>Nervous system rewiring</li>
+          <li>Vagal toning</li>
+          <li>Trauma-aware practice</li>
+          <li>Deep rest — yoga nidra (non-sleep deep rest)</li>
+        </ul>
+      </div>
+      <div class="jgroup">
+        <span class="jicon"><img src="assets/ic-still.png" alt=""></span>
+        <div class="jh">Breath, stillness &amp; sound</div>
+        <div class="js">Quiet the mind and widen presence.</div>
+        <ul>
+          <li>Yogic breathwork (pranayama)</li>
+          <li>Meditation &amp; mindfulness</li>
+          <li>Deep-state sound journeys</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ QUOTE ═══ -->
+<section class="quoteband grain">
+  <img class="qb-bg" src="assets/ph-quote.jpg" alt="" data-parallax data-speed="0.16">
+  <div class="qb-tint"></div>
+  <div class="qb-inner">
+    <div class="sanskrit">स्थिर सुखम् आसनम्</div>
+    <div class="eyebrow">Sthira sukham āsanam · Yoga Sūtra 2.46</div>
+    <div class="qb-trans">&ldquo;The posture should be steady, and at ease.&rdquo;</div>
+    <blockquote>It is the same balance your nervous system is asking for — <em>enough strength to hold you, enough softness to let you rest.</em> The practice isn’t forcing the posture, or your life. It is finding the place where effort and ease finally meet.</blockquote>
+  </div>
+</section>
+
+<!-- ═══ KIND WORDS (testimonials) ═══ -->
+<section class="kind" id="kind">
+  <div class="wrap">
+    <div class="kind-head">
+      <div class="eyebrow">Kind words</div>
+      <h2 class="section-title">From those I've <em>practised with.</em></h2>
+      <p>A few reflections from students, private clients and teams I've had the joy of holding space for.</p>
+    </div>
+    <div class="kw-carousel">
+      <button class="kw-arrow kw-prev" id="kwPrev" aria-label="Previous testimonial">‹</button>
+      <div class="kw-viewport">
+        <div class="kw-track" id="kwTrack">
+          <div class="kw-card">
+            <span class="kw-mark">&ldquo;</span>
+            <div class="kw-stars" aria-label="5 out of 5">★★★★★</div>
+            <p>I love everything from our private lessons. I feel so much lighter after a class. I have less pain now, and notice more mobility in my daily workouts.</p>
+            <div class="kw-name">Reshma · Private client</div>
+          </div>
+          <div class="kw-card">
+            <span class="kw-mark">&ldquo;</span>
+            <div class="kw-stars" aria-label="5 out of 5">★★★★★</div>
+            <p>The wonderful Mags gently got us to relax, to do only what our bodies allowed, to push boundaries a little and teach us that there is in fact a right and wrong way to breathe. Some of us were brand new, others could fold themselves in half, but we shared a beautiful sunset, lots of laughter, some quiet moments and left feeling far more connected to ourselves and others than when we arrived.</p>
+            <div class="kw-name">Renette · Group session</div>
+          </div>
+          <div class="kw-card">
+            <span class="kw-mark">&ldquo;</span>
+            <div class="kw-stars" aria-label="5 out of 5">★★★★★</div>
+            <p>Just arrived home after a beautiful yet challenging learning and yoga practice over the past few days. Thank you for your patience, your teaching and inspiration. It was a privilege working with you.</p>
+            <div class="kw-name">Totsie · Retreat</div>
+          </div>
+          <div class="kw-card">
+            <span class="kw-mark">&ldquo;</span>
+            <div class="kw-stars" aria-label="5 out of 5">★★★★★</div>
+            <p>Thank you again for a wonderful morning experience. I was a bit apprehensive but you were welcoming and inspiring.</p>
+            <div class="kw-name">Tyna · Workshop</div>
+          </div>
+        </div>
+      </div>
+      <button class="kw-arrow kw-next" id="kwNext" aria-label="Next testimonial">›</button>
+      <div class="kw-dots" id="kwDots"></div>
     </div>
   </div>
 </section>
@@ -747,8 +919,7 @@
         <div class="message-content">
         <h3>Send me a <em>message</em></h3>
         <div class="sub">A class, a private session, a retreat, or yoga for your team — tell me what you're looking for. Every message comes straight to me.</div>
-        <a href="mailto:magdarievanstadenyoga@gmail.com?subject=Hello%20Mags" class="btn btn-primary" style="align-self:flex-start;margin-top:4px;">Email me →</a>
-        <div class="email-direct" style="margin-top:auto;">Or reach me directly at <a href="mailto:magdarievanstadenyoga@gmail.com">magdarievanstadenyoga@gmail.com</a></div>
+        <a href="mailto:magdarievanstadenyoga@gmail.com?subject=Hello%20Mags" class="btn btn-primary" style="align-self:flex-start;margin-top:8px;">Email me →</a>
         </div>
       </div>
 
@@ -790,7 +961,7 @@
   <div class="wrap">
     <div class="footer-top">
       <div>
-        <img class="footer-logo" src="assets/logo-light.png" alt="Magdarie van Staden">
+        <a href="index.html"><img class="footer-logo" src="assets/logo-light.png" alt="Magdarie van Staden"></a>
         <div class="footer-blurb">A space where your nervous system gets to exhale. Group classes, private 1:1s, corporate wellness, sound baths and retreats — across Westville, Durban North &amp; Umhlanga.</div>
         <div class="footer-social">
           <a href="https://instagram.com/magdarievanstadenyoga" target="_blank" rel="noopener" aria-label="Instagram">
@@ -844,7 +1015,7 @@
 <script>
   (function(){
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    var sel = '.path-head,.tiles,.sched-head,.sched-grid,.private-grid,.events-head,.event-feature,.qb-inner,.about-grid,.corp-grid,.lm-card,.touch-head,.touch-grid';
+    var sel = '.path-head,.tiles,.sched-head,.sched-list,.private-grid,.events-head,.event-feature,.qb-inner,.about-grid,.corp-grid,.lm-card,.kind-head,.kw-carousel,.touch-head,.touch-grid';
     var els = document.querySelectorAll(sel);
     els.forEach(function(el){ el.classList.add('reveal'); });
     var io = new IntersectionObserver(function(entries){
@@ -874,7 +1045,33 @@
 
     // nav frosted on scroll
     var nav=document.querySelector('.nav');
-    if(nav){ var onScroll=function(){ nav.classList.toggle('scrolled', window.scrollY>20); }; window.addEventListener('scroll', onScroll, {passive:true}); onScroll(); }
+    if(nav){ var onScroll=function(){ var y=window.scrollY; var a=Math.min(y/150,0.94); nav.style.backgroundColor='rgba(243,241,235,'+a.toFixed(3)+')'; nav.classList.toggle('scrolled', y>75); }; window.addEventListener('scroll', onScroll, {passive:true}); onScroll(); }
+
+    // mobile hamburger menu
+    (function(){
+      var t=document.getElementById('navToggle'), m=document.getElementById('mobileMenu'), o=document.getElementById('mobileOverlay');
+      if(!t||!m||!o) return;
+      function close(){ document.body.classList.remove('menu-open'); m.classList.remove('open'); o.classList.remove('open'); t.setAttribute('aria-expanded','false'); }
+      function open(){ document.body.classList.add('menu-open'); m.classList.add('open'); o.classList.add('open'); t.setAttribute('aria-expanded','true'); }
+      t.addEventListener('click', function(){ document.body.classList.contains('menu-open') ? close() : open(); });
+      o.addEventListener('click', close);
+      Array.prototype.forEach.call(m.querySelectorAll('a'), function(a){ a.addEventListener('click', close); });
+    })();
+
+    // testimonials carousel
+    (function(){
+      var track=document.getElementById('kwTrack'); if(!track) return;
+      var slides=track.children, n=slides.length, i=0;
+      var dots=document.getElementById('kwDots');
+      for(var d=0; d<n; d++){ var b=document.createElement('button'); b.className='kw-dot'+(d===0?' active':''); b.setAttribute('aria-label','Go to testimonial '+(d+1)); (function(idx){ b.addEventListener('click',function(){ go(idx); }); })(d); dots.appendChild(b); }
+      function go(idx){ i=(idx+n)%n; track.style.transform='translateX(-'+(i*100)+'%)'; var ds=dots.children; for(var k=0;k<ds.length;k++) ds[k].classList.toggle('active',k===i); }
+      document.getElementById('kwPrev').addEventListener('click',function(){ go(i-1); stop(); });
+      document.getElementById('kwNext').addEventListener('click',function(){ go(i+1); stop(); });
+      var timer=setInterval(function(){ go(i+1); }, 7000);
+      function stop(){ clearInterval(timer); }
+      var car=track.closest('.kw-carousel');
+      car.addEventListener('mouseenter',stop);
+    })();
 
     // announcement bar: dismiss + auto-hide after retreat
     (function(){

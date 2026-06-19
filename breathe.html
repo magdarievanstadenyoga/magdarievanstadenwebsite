@@ -14,7 +14,9 @@
 <link rel="icon" type="image/svg+xml" href="assets/enso.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;1,300;1,400&family=Hanken+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&family=Fira+Sans:ital,wght@0,300;0,400;1,300;1,400&family=Hanken+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/favicon-180.png">
 <style>
 :root {
   --forest: #465447;
@@ -109,13 +111,13 @@ body.ph-hold-out{ background: var(--paper); }
   opacity: 0.85;
 }
 h1 {
-  font-family: 'Fira Sans', sans-serif;
-  font-size: 21px;
-  font-weight: 300;
+  font-family: 'Cabin', sans-serif;
+  font-size: 22px;
+  font-weight: 500;
   color: var(--charcoal);
   letter-spacing: -0.01em;
 }
-h1 em { font-style: italic; color: var(--moss); font-weight: 300; }
+h1 em { font-style: normal; color: var(--moss); font-weight: 400; }
 
 /* ── Pattern pills ── */
 .patterns {
@@ -663,14 +665,17 @@ footer {
   .enso-wrap { transition: none !important; animation: none !important; }
 }
 </style>
+<!-- Google Analytics 4 — replace G-XXXXXXXXXX with your Measurement ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
 </head>
 <body>
 
 <header class="site-header">
   <a href="index.html" class="header-back">← Back</a>
-  <div class="header-logo-wrap">
+  <a href="index.html" aria-label="Magdarie van Staden home" class="header-logo-wrap" style="display:block;">
     <img src="assets/logo.png" alt="Magdarie van Staden" class="header-logo">
-  </div>
+  </a>
 </header>
 
 <div class="content">
@@ -881,7 +886,7 @@ footer {
 <footer>
   <img src="assets/logo-light.png" alt="Magdarie van Staden" class="footer-logo" onerror="this.style.display='none'">
   <div class="footer-links">
-    <a href="/" class="footer-link">Home</a>
+    <a href="index.html" class="footer-link">Home</a>
     <span class="footer-dot">·</span>
     <a href="private-sessions.html" class="footer-link">Private sessions</a>
     <span class="footer-dot">·</span>
@@ -916,7 +921,7 @@ footer {
       </svg>
     </a>
   </div>
-  <div class="footer-copy">© 2025 Magdarie van Staden · Durban, KZN</div>
+  <div class="footer-copy">© 2026 Magdarie van Staden · Durban, KZN</div>
 </footer>
 
 <script>
