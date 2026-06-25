@@ -263,25 +263,35 @@
   .sched-head p { margin-top:14px; color:rgba(42,46,42,0.72); }
   /* minimal editorial list — one line per class, whole row books */
   .sched-list { max-width:940px; margin:0 auto; position:relative; z-index:2; border-top:1px solid rgba(70,84,71,0.18); }
-  .s-row { display:grid; grid-template-columns:66px 150px 1fr auto; align-items:center; gap:26px; padding:25px 16px; border-bottom:1px solid rgba(70,84,71,0.12); transition:background .35s cubic-bezier(.22,.61,.36,1), padding .35s, box-shadow .35s; text-decoration:none; color:inherit; }
+  .s-row { display:grid; grid-template-columns:60px 100px 160px 1fr auto; align-items:start; gap:22px; padding:25px 16px; border-bottom:1px solid rgba(70,84,71,0.12); transition:background .35s cubic-bezier(.22,.61,.36,1), padding .35s, box-shadow .35s; text-decoration:none; color:inherit; }
   .s-row:hover { background:var(--white); padding-left:26px; padding-right:26px; box-shadow:0 14px 36px rgba(53,61,53,0.07); border-radius:14px; border-bottom-color:transparent; }
-  .s-day { font-family:'Cabin',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; color:var(--clay); }
-  .s-day.cont { color:rgba(70,84,71,0.28); font-weight:400; }
-  .s-time { font-family:'Hanken Grotesk',sans-serif; font-weight:600; font-size:18px; color:var(--charcoal); font-variant-numeric:tabular-nums; letter-spacing:0.005em; white-space:nowrap; }
+  .s-day { align-self:center; font-family:'Cabin',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; }
+  .s-day.day-a { color:var(--clay); }
+  .s-day.day-b { color:var(--forest); }
+  .s-day.cont { opacity:0.35; font-weight:400; }
+  .s-time { align-self:center; font-family:'Hanken Grotesk',sans-serif; font-weight:500; font-size:15px; color:var(--charcoal); font-variant-numeric:tabular-nums; letter-spacing:0.005em; white-space:nowrap; }
+  .s-venue { display:flex; flex-direction:column; gap:4px; white-space:nowrap; }
+  .s-venue .s-area { font-family:'Cabin',sans-serif; font-size:11.5px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--forest); transition:color .2s; }
+  .s-venue .s-place { font-size:11.5px; font-weight:400; text-transform:none; letter-spacing:0.02em; color:var(--moss); }
+  .s-row:hover .s-venue .s-area { color:var(--clay-dk); }
   .s-class { font-size:15px; color:var(--charcoal); font-weight:500; }
-  .s-class .s-sub { display:block; font-size:10px; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:var(--moss); margin-top:5px; }
-  .s-venue { justify-self:end; display:inline-flex; align-items:center; gap:10px; font-size:11.5px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--forest); white-space:nowrap; transition:color .2s; }
-  .s-venue .s-area { color:var(--moss); font-weight:400; text-transform:none; letter-spacing:0.02em; }
-  .s-row:hover .s-venue { color:var(--clay-dk); }
-  .s-venue .arw { color:var(--clay); font-size:15px; transition:transform .25s ease; }
+  .s-class .s-name { display:block; }
+  .s-class .s-sub { display:inline-block; margin-top:7px; padding:3px 10px; border-radius:20px; font-size:10px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#fff; }
+  .s-sub.dur-45 { background:var(--clay); }
+  .s-sub.dur-60 { background:var(--moss); }
+  .s-sub.dur-75 { background:var(--forest); }
+  .s-cta { align-self:center; justify-self:end; display:inline-flex; align-items:center; gap:6px; font-family:'Cabin',sans-serif; font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--clay); white-space:nowrap; transition:color .2s; }
+  .s-cta .arw { font-size:14px; transition:transform .25s ease; }
+  .s-row:hover .s-cta { color:var(--clay-dk); }
   .s-row:hover .arw { transform:translateX(6px); }
   @media (max-width:720px){
     .s-row { grid-template-columns:50px 1fr; gap:4px 16px; padding:20px 8px; }
     .s-row:hover { padding-left:14px; padding-right:14px; }
-    .s-day { grid-row:1 / span 3; align-self:start; padding-top:4px; font-size:12px; letter-spacing:0.14em; }
-    .s-time { grid-column:2; font-size:16px; }
-    .s-class { grid-column:2; }
-    .s-venue { grid-column:2; justify-self:start; margin-top:9px; }
+    .s-day { grid-row:1 / span 4; align-self:start; padding-top:4px; font-size:12px; letter-spacing:0.14em; }
+    .s-time { grid-column:2; font-size:15px; }
+    .s-venue { grid-column:2; margin-top:7px; }
+    .s-cta { grid-column:2; justify-self:start; margin-top:7px; font-size:10px; }
+    .s-class { grid-column:2; margin-top:7px; }
   }
   .sched-foot { text-align:center; margin-top:42px; font-size:13.5px; color:rgba(42,46,42,0.6); position:relative; z-index:2; }
   .sched-foot strong { color:var(--clay-dk); font-weight:600; }
@@ -616,46 +626,53 @@
     </div>
     <div class="sched-list">
       <a class="s-row" href="https://levelsfitness.co.za" target="_blank" rel="noopener">
-        <div class="s-day">Mon</div>
-        <div class="s-time">07:30 – 08:30</div>
-        <div class="s-class">Everyday Yoga<span class="s-sub">All levels</span></div>
-        <div class="s-venue">Levels <span class="s-area">Durban North</span><span class="arw">→</span></div>
+        <div class="s-day day-a">Mon</div>
+        <div class="s-time">7 – 8am</div>
+        <div class="s-venue"><span class="s-area">Dbn North</span><span class="s-place">Levels, Kensington Square</span></div>
+        <div class="s-class"><span class="s-name">Strong &amp; Mobile Yoga</span><span class="s-sub dur-60">60 min</span></div>
+        <div class="s-cta">Click to book<span class="arw">→</span></div>
       </a>
       <a class="s-row" href="https://bookamat.co/embed/magdarie-van-staden-yoga" target="_blank" rel="noopener">
-        <div class="s-day">Tue</div>
-        <div class="s-time">17:15 – 18:30</div>
-        <div class="s-class">Hatha Yoga</div>
-        <div class="s-venue">Salamanca <span class="s-area">Westville</span><span class="arw">→</span></div>
+        <div class="s-day day-b">Tue</div>
+        <div class="s-time">5.15 – 6.30pm</div>
+        <div class="s-venue"><span class="s-area">Westville</span><span class="s-place">Salamanca Centre</span></div>
+        <div class="s-class"><span class="s-name">Hatha Yoga</span><span class="s-sub dur-75">75 min</span></div>
+        <div class="s-cta">Click to book<span class="arw">→</span></div>
       </a>
       <a class="s-row" href="https://www.manifestyoga.co.za/service-page/hatha-yoga?referral=service_list_widget" target="_blank" rel="noopener">
-        <div class="s-day">Wed</div>
-        <div class="s-time">05:30 – 06:30</div>
-        <div class="s-class">Hatha Yoga</div>
-        <div class="s-venue">Manifest <span class="s-area">Umhlanga</span><span class="arw">→</span></div>
+        <div class="s-day day-a">Wed</div>
+        <div class="s-time">5.30 – 6.30am</div>
+        <div class="s-venue"><span class="s-area">Umhlanga</span><span class="s-place">Manifest Studio</span></div>
+        <div class="s-class"><span class="s-name">Hatha Yoga</span><span class="s-sub dur-60">60 min</span></div>
+        <div class="s-cta">Click to book<span class="arw">→</span></div>
       </a>
       <a class="s-row" href="https://levelsfitness.co.za" target="_blank" rel="noopener">
-        <div class="s-day cont">Wed</div>
-        <div class="s-time">07:30 – 08:30</div>
-        <div class="s-class">Everyday Yoga<span class="s-sub">All levels</span></div>
-        <div class="s-venue">Levels <span class="s-area">Durban North</span><span class="arw">→</span></div>
+        <div class="s-day cont day-a">Wed</div>
+        <div class="s-time">7 – 8am</div>
+        <div class="s-venue"><span class="s-area">Dbn North</span><span class="s-place">Levels, Kensington Square</span></div>
+        <div class="s-class"><span class="s-name">Strong &amp; Mobile Yoga</span><span class="s-sub dur-60">60 min</span></div>
+        <div class="s-cta">Click to book<span class="arw">→</span></div>
       </a>
       <a class="s-row" href="https://bookamat.co/embed/magdarie-van-staden-yoga" target="_blank" rel="noopener">
-        <div class="s-day">Thu</div>
-        <div class="s-time">17:15 – 18:30</div>
-        <div class="s-class">Vinyasa Yoga</div>
-        <div class="s-venue">Salamanca <span class="s-area">Westville</span><span class="arw">→</span></div>
+        <div class="s-day day-b">Thu</div>
+        <div class="s-time">5.15 – 6.30pm</div>
+        <div class="s-venue"><span class="s-area">Westville</span><span class="s-place">Salamanca Centre</span></div>
+        <div class="s-class"><span class="s-name">Vinyasa Yoga</span><span class="s-sub dur-75">75 min</span></div>
+        <div class="s-cta">Click to book<span class="arw">→</span></div>
       </a>
       <a class="s-row" href="https://www.manifestyoga.co.za/service-page/hatha-yoga?referral=service_list_widget" target="_blank" rel="noopener">
-        <div class="s-day">Fri</div>
-        <div class="s-time">05:30 – 06:30</div>
-        <div class="s-class">Hatha Yoga</div>
-        <div class="s-venue">Manifest <span class="s-area">Umhlanga</span><span class="arw">→</span></div>
+        <div class="s-day day-a">Fri</div>
+        <div class="s-time">5.30 – 6.30am</div>
+        <div class="s-venue"><span class="s-area">Umhlanga</span><span class="s-place">Manifest Studio</span></div>
+        <div class="s-class"><span class="s-name">Hatha Yoga</span><span class="s-sub dur-60">60 min</span></div>
+        <div class="s-cta">Click to book<span class="arw">→</span></div>
       </a>
       <a class="s-row" href="https://www.virginactive.co.za/bookings" target="_blank" rel="noopener">
-        <div class="s-day cont">Fri</div>
-        <div class="s-time">08:15 – 09:00</div>
-        <div class="s-class">Hot Flow<span class="s-sub">45 min</span></div>
-        <div class="s-venue">Virgin Active <span class="s-area">Gateway</span><span class="arw">→</span></div>
+        <div class="s-day cont day-a">Fri</div>
+        <div class="s-time">8.15 – 9am</div>
+        <div class="s-venue"><span class="s-area">Umhlanga</span><span class="s-place">Virgin Active Gateway</span></div>
+        <div class="s-class"><span class="s-name">Hot Flow</span><span class="s-sub dur-45">45 min</span></div>
+        <div class="s-cta">Click to book<span class="arw">→</span></div>
       </a>
     </div>
     <div class="sched-foot">Each venue books on its own platform — <strong>tap a class</strong> to reserve your spot.</div>
@@ -703,7 +720,7 @@
       <p>Retreats, sound baths, workshops and seasonal gatherings — moments to step out of the everyday, drop deeper into your body, and practise in good company. Here's what's on the horizon.</p>
     </div>
 
-    <a class="event-feature" href="mailto:magdarievanstadenyoga@gmail.com?subject=Be%20the%20Calm%20-%20Waitlist" style="text-decoration:none;">
+    <a class="event-feature" href="https://preview.mailerlite.io/forms/2422142/191235391181816872/share" target="_blank" rel="noopener" style="text-decoration:none;">
       <div class="event-thumb">
         <div class="cat-tag cat-experience">Experience</div>
         <img src="assets/event-be-the-calm.png" alt="Be the Calm — Ocean-side Morning Retreat, 25 July 2026">
