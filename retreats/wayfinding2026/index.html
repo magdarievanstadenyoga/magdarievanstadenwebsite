@@ -188,7 +188,7 @@ src="https://www.facebook.com/tr?id=246893812899528&ev=PageView&noscript=1"
   .limit{display:inline-block;margin-top:16px;background:rgba(210,130,90,0.12);color:var(--terra-dd);font-size:12px;font-weight:600;letter-spacing:0.06em;padding:8px 16px;border-radius:20px;}
 
   /* SECURE YOUR SPOT — payment options */
-  .pay3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:920px;margin:0 auto;}
+  .pay3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:920px;margin:0 auto;justify-content:center;}
   @media(max-width:760px){ .pay3{grid-template-columns:1fr;} }
   .payc{background:var(--white);border:1px solid rgba(14,59,59,0.12);border-radius:16px;padding:28px 24px;text-align:center;position:relative;display:flex;flex-direction:column;}
   .payc.feat{border:2px solid var(--terra-d);}
@@ -732,7 +732,8 @@ src="https://www.facebook.com/tr?id=246893812899528&ev=PageView&noscript=1"
       else if(now<retreat){target=retreat;label.textContent='The retreat begins in';}
       else {label.textContent='Wayfinding is underway';units.innerHTML='<span>See you at Pumula</span>';return;}
       var d=target-now;
-      units.innerHTML='<b>'+Math.floor(d/86400000)+'</b><span>days</span> <b>'+pad(Math.floor(d%86400000/3600000))+'</b><span>hrs</span> <b>'+pad(Math.floor(d%3600000/60000))+'</b><span>min</span> <b>'+pad(Math.floor(d%60000/1000))+'</b><span>sec</span>';
+      var days=Math.ceil(d/86400000);
+      units.innerHTML='<b>'+days+'</b><span>days</span> <b>'+pad(Math.floor(d%86400000/3600000))+'</b><span>hrs</span> <b>'+pad(Math.floor(d%3600000/60000))+'</b><span>min</span> <b>'+pad(Math.floor(d%60000/1000))+'</b><span>sec</span>';
     }
     tick();setInterval(tick,1000);
   })();
