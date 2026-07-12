@@ -83,6 +83,24 @@ src="https://www.facebook.com/tr?id=246893812899528&ev=PageView&noscript=1"
   .hf .vs{font-size:12.5px;color:rgba(234,230,217,0.7);}
   .hs-hook{color:rgba(234,230,217,0.92);font-size:15.5px;line-height:1.7;max-width:480px;margin-bottom:28px;}
 
+  /* STORY */
+  .story .prose{max-width:700px;margin:0 auto;}
+  .story .lede{font-family:'Cabin',sans-serif;font-size:21px;font-weight:500;color:var(--charcoal);line-height:1.5;margin-bottom:22px;}
+  .story p{margin-bottom:18px;color:var(--ink);font-size:15px;line-height:1.75;}
+  .story .closer{text-align:center;font-family:'Cabin',sans-serif;font-size:19px;font-weight:600;color:var(--clay-dk);margin-top:8px;}
+
+  /* DETAILS */
+  .details{background:var(--sand);}
+  .details-grid{display:grid;grid-template-columns:0.85fr 1.15fr;gap:44px;max-width:820px;margin:0 auto;align-items:start;}
+  @media(max-width:700px){ .details-grid{grid-template-columns:1fr;gap:24px;} }
+  .dw-date{font-family:'Cabin',sans-serif;font-size:21px;color:var(--charcoal);margin-bottom:8px;}
+  .dw-loc{font-size:14.5px;color:var(--moss);margin-bottom:4px;}
+  .dw-note{font-size:12.5px;color:rgba(42,46,42,0.6);font-style:italic;}
+  .sched-list{list-style:none;background:var(--white);border-radius:16px;border:1px solid rgba(70,84,71,0.12);overflow:hidden;}
+  .sched-list li{display:flex;gap:16px;padding:13px 18px;border-top:1px solid rgba(70,84,71,0.1);font-size:14px;color:var(--ink);}
+  .sched-list li:first-child{border-top:none;}
+  .sched-list .t{font-family:'Cabin',sans-serif;font-weight:600;color:var(--clay-dk);min-width:64px;}
+
   /* BOOKING OPTIONS */
   .opt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
   @media(max-width:860px){ .opt-grid{grid-template-columns:1fr;max-width:420px;margin:0 auto;} }
@@ -160,6 +178,41 @@ src="https://www.facebook.com/tr?id=246893812899528&ev=PageView&noscript=1"
       </div>
       <p class="hs-hook">A Saturday morning to try yoga, surfing, or both. Stillness and breath as the sun comes up, then straight into the water — wetsuits provided, closing with brunch. No experience needed, just bring yourself.</p>
       <a href="#book" class="btn btn-primary">See booking options</a>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story">
+  <div class="wrap prose">
+    <p class="lede">Here's the thing about waves: we can't stop them. But we can learn to surf them. And that applies to so much more than just the ocean.</p>
+    <p>Yoga teaches you how to be still — how to breathe through discomfort, find calm in your body, anchor yourself in the present. Surfing teaches you how to go with the flow, how to read the moment, stay balanced when everything's shifting. Together, they're pure magic. You'll feel it the moment you're in the water after breathwork from your yoga practice — that body awareness, that presence of mind. Suddenly you're not fighting the ocean, you're dancing with her.</p>
+    <p>During our morning retreat, we're bringing both together. You'll start in stillness, take some time to ground and connect body and breath as the sun comes up, then jump into the ocean — one of the most refreshing starts to a morning (and yes, don't worry, you'll have a wetsuit) — and leave feeling alive and relaxed at the same time, genuinely proud of yourself for trying something new. Because there's something beautiful about showing up as a beginner, allowing yourself to not be perfect, and just having fun along the way.</p>
+    <p>Winter here in eThekwini is truly the best. While everyone else in Joburg and Cape Town is cold and miserable, we get to still spend glorious days on the beach. And we're making the most of it.</p>
+    <p style="margin-top:26px;">This isn't about becoming an expert by 10am. It's about spending a morning doing something that scares you a little, feels good in your body, and reminds you that you're capable of more than you think. You'll leave here feeling like something shifted — proof that you can do uncomfortable things, and have fun while you're doing it.</p>
+    <p class="closer">Let's go.</p>
+  </div>
+</section>
+
+<!-- DETAILS -->
+<section class="details">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Details</div>
+      <h2 class="section-title">The shape of the <em>morning.</em></h2>
+    </div>
+    <div class="details-grid">
+      <div>
+        <div class="dw-date">Saturday, 25 July · 6:00–11:00am</div>
+        <div class="dw-loc">Durban Beach Club, Browns Road</div>
+        <div class="dw-note">Under cover parking &amp; warm showers available</div>
+      </div>
+      <ul class="sched-list">
+        <li><span class="t">6:00</span><span>Yoga &amp; breathwork</span></li>
+        <li><span class="t">7:30</span><span>Surf briefing &amp; intro</span></li>
+        <li><span class="t">8:00</span><span>In the water</span></li>
+        <li><span class="t">10:30</span><span>Brunch</span></li>
+      </ul>
     </div>
   </div>
 </section>
