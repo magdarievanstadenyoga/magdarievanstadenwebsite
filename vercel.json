@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/ritual-members", "destination": "https://ritual-studio-olive.vercel.app/ritual-members" },
+    { "source": "/ritual-members/:path*", "destination": "https://ritual-studio-olive.vercel.app/ritual-members/:path*" }
+  ]
+}

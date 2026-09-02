@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /ritual-members
 
 Sitemap: https://magdarievanstaden.com/sitemap.xml
