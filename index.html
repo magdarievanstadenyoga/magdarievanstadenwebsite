@@ -744,7 +744,7 @@ src="https://www.facebook.com/tr?id=246893812899528&ev=PageView&noscript=1"
       <p>Retreats, sound baths, workshops and seasonal gatherings — moments to step out of the everyday, drop deeper into your body, and practise in good company. Here's what's on the horizon.</p>
     </div>
 
-    <a class="event-feature" href="retreats/wayfinding2026/" style="text-decoration:none;">
+    <a class="event-feature" data-ends="2026-10-11T23:59:00+02:00" href="retreats/wayfinding2026/" style="text-decoration:none;">
       <div class="event-thumb">
         <div class="cat-tag cat-retreat">Retreat</div>
         <img src="assets/event-wayfinding.jpg" alt="Wayfinding Retreat — 9–11 October 2026, Pumula">
@@ -758,7 +758,7 @@ src="https://www.facebook.com/tr?id=246893812899528&ev=PageView&noscript=1"
       </div>
     </a>
 
-    <a class="event-feature" href="Events/be-the-calm/be-the-calm-nov/" style="text-decoration:none;">
+    <a class="event-feature" data-ends="2026-11-28T09:30:00+02:00" href="Events/be-the-calm/be-the-calm-nov/" style="text-decoration:none;">
       <div class="event-thumb">
         <div class="cat-tag cat-experience">Experience</div>
         <img src="assets/event-be-the-calm.jpg" alt="Be the Calm, Ocean-side Morning Retreat, 28 November 2026">
@@ -769,6 +769,35 @@ src="https://www.facebook.com/tr?id=246893812899528&ev=PageView&noscript=1"
         <div class="loc-line">Durban Beach Club, Browns Road</div>
         <p>Sunrise-ish yoga and breathwork on the deck with the ocean as backdrop, then an introduction to surfing and learning to read the ocean. No experience needed. Wetsuit &amp; surf board included.</p>
         <span class="btn btn-forest" style="align-self:flex-start;">Book</span>
+      </div>
+    </a>
+
+
+    <a class="event-feature" data-ends="2026-10-25T17:30:00+02:00" href="Events/yin-sound-immersion/yin-sound-oct/" style="text-decoration:none;">
+      <div class="event-thumb">
+        <div class="cat-tag cat-soundbath">Sound bath</div>
+        <img src="assets/event-yin-sound-oct.jpg" alt="Yin and Sound Bath Immersion, Sunday 25 October 2026">
+      </div>
+      <div class="event-body">
+        <div class="event-when">Sun 25 October 2026 · 4:00 to 5:30pm · R300</div>
+        <h3>Yin &amp; Sound Bath <em>Immersion</em></h3>
+        <div class="loc-line">Manifest Yoga Studio, Lagoon Drive</div>
+        <p>Combining two powerful practices to recalibrate the nervous system: long-held, passive floor stretches with an immersive meditative sound experience. Beginner-friendly, and spaces are limited.</p>
+        <span class="btn btn-forest" style="align-self:flex-start;">Reserve your space</span>
+      </div>
+    </a>
+
+    <a class="event-feature" data-ends="2026-12-13T17:30:00+02:00" href="Events/yin-sound-immersion/yin-sound-dec/" style="text-decoration:none;">
+      <div class="event-thumb">
+        <div class="cat-tag cat-soundbath">Sound bath</div>
+        <img src="assets/event-yin-sound-dec.jpg" alt="Yin and Sound Bath Immersion, Sunday 13 December 2026">
+      </div>
+      <div class="event-body">
+        <div class="event-when">Sun 13 December 2026 · 4:00 to 5:30pm · R300</div>
+        <h3>Yin &amp; Sound Bath <em>Immersion</em></h3>
+        <div class="loc-line">Manifest Yoga Studio, Lagoon Drive</div>
+        <p>Combining two powerful practices to recalibrate the nervous system: long-held, passive floor stretches with an immersive meditative sound experience. Beginner-friendly, and spaces are limited.</p>
+        <span class="btn btn-forest" style="align-self:flex-start;">Reserve your space</span>
       </div>
     </a>
 
@@ -1125,5 +1154,9 @@ src="https://www.facebook.com/tr?id=246893812899528&ev=PageView&noscript=1"
   })();
 </script>
 
+<script>
+// AUTO-ARCHIVE: hide any event card whose end time (data-ends) has passed.
+(function(){ var now = Date.now(); Array.prototype.forEach.call(document.querySelectorAll('[data-ends]'), function(el){ if (now > Date.parse(el.getAttribute('data-ends'))) el.style.display = 'none'; }); })();
+</script>
 </body>
 </html>
