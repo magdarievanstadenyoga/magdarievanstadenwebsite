@@ -183,6 +183,16 @@ src="https://www.facebook.com/tr?id=246893812899528&ev=PageView&noscript=1"
   .sched-list .t{font-family:'Cabin',sans-serif;font-weight:600;color:var(--clay-dk);min-width:52px;}
   .sched-list .n{display:block;font-size:12.5px;color:var(--moss);}
 
+
+  /* TESTIMONIALS */
+  .tst-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;max-width:900px;margin:0 auto;align-items:start;}
+  @media(max-width:620px){ .tst-grid{grid-template-columns:1fr;} }
+  .tst-card{background:var(--white);border:1px solid rgba(70,84,71,0.12);border-radius:18px;padding:34px 30px 26px;position:relative;box-shadow:0 14px 34px rgba(53,61,53,0.06);}
+  .tst-card::before{content:'\201C';position:absolute;top:6px;left:22px;font-family:'Cabin',sans-serif;font-size:64px;line-height:1;color:var(--clay);opacity:0.35;}
+  .tst-card blockquote{font-family:'Cabin',sans-serif;font-size:16.5px;line-height:1.65;color:var(--charcoal);position:relative;}
+  .tst-card figcaption{margin-top:18px;font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--clay-dk);}
+  .tst-card figcaption span{display:block;margin-top:3px;font-weight:400;letter-spacing:0.08em;color:var(--moss);}
+
   /* BOOKING OPTIONS */
   .opt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch;}
   @media(max-width:860px){ .opt-grid{grid-template-columns:1fr;max-width:420px;margin:0 auto;} .opt-card.feat{order:-1;} }
@@ -396,6 +406,26 @@ src="https://www.facebook.com/tr?id=246893812899528&ev=PageView&noscript=1"
       <button class="g-tall" data-full="images/sunrise-dunes.jpg"><img src="images/sunrise-dunes.jpg" alt="The sun coming up over the dunes and the sea" loading="lazy"></button>
       <button data-full="images/deck-dawn-circle.jpg"><img src="images/deck-dawn-circle.jpg" alt="Settling in on the deck before dawn" loading="lazy"></button>
       <button data-full="images/pier-waves.jpg"><img src="images/pier-waves.jpg" alt="Waves rolling in by the pier" loading="lazy"></button>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Testimonials</div>
+      <h2 class="section-title">What people said <em>after the morning.</em></h2>
+    </div>
+    <div class="tst-grid">
+      <figure class="tst-card">
+        <blockquote>My first surfing experience was so much fun. Tash was an amazing instructor, so patient, encouraging and made me feel completely safe in the water. She explained everything so clearly, such an awesome vibe and a great teacher. 🏄‍♂️ Not forgetting the amazing yoga class, perfect venue, so calming &amp; beautifully led 🧘</blockquote>
+        <figcaption>Shikaar<span>First-time surfer</span></figcaption>
+      </figure>
+      <figure class="tst-card">
+        <blockquote>Thank you for hosting such a cool event, we both loved it 👌</blockquote>
+        <figcaption>Past guest</figcaption>
+      </figure>
     </div>
   </div>
 </section>
