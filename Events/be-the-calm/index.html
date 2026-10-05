@@ -8,7 +8,7 @@
 // EVENT HUB: opens the next date that hasn't finished yet. Add each new date here, oldest first.
 // Past dates are skipped automatically, so nothing needs to be removed by hand.
 var DATES = [
-  {url:'be-the-calm-nov/', ends:'2026-11-28T09:30:00+02:00'}
+  {url:'be-the-calm-nov/', ends:'2026-11-28T09:00:00+02:00'}
 ];
 for (var i = 0; i < DATES.length; i++) {
   if (Date.now() < Date.parse(DATES[i].ends)) { location.replace(DATES[i].url + location.search); break; }
