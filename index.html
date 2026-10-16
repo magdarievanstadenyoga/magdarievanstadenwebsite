@@ -355,6 +355,14 @@ src="https://www.facebook.com/tr?id=246893812899528&ev=PageView&noscript=1"
   .event-body h3 em { font-style:normal; font-weight:400; color:var(--forest); }
   .event-body .loc-line { font-family:'Cabin',sans-serif; font-style:italic; font-size:15px; color:var(--moss); margin-bottom:16px; }
   .event-body p { font-size:14.5px; color:rgba(42,46,42,0.72); margin-bottom:28px; }
+  /* Landscape thumbnail (1080x850 artwork) — card height follows the image, no white space */
+  .event-feature.ef-landscape { grid-template-columns:56fr 44fr; }
+  .ef-landscape .event-thumb { aspect-ratio:1080/850; }
+  .ef-landscape .event-body { padding:30px 40px; }
+  .ef-landscape .event-body h3 { font-size:27px; margin:10px 0 4px; }
+  .ef-landscape .event-body .loc-line { margin-bottom:12px; }
+  .ef-landscape .event-body p { margin-bottom:20px; }
+  @media (max-width:820px){ .event-feature.ef-landscape{ grid-template-columns:1fr; } .ef-landscape .event-thumb{ min-height:0; } .ef-landscape .event-body{ padding:36px 28px; } }
   .events-note { text-align:center; margin-top:38px; font-size:14px; color:rgba(42,46,42,0.6); font-style:italic; font-family:'Cabin',sans-serif; }
 
   /* ─── QUOTE ─── */
@@ -748,6 +756,20 @@ src="https://www.facebook.com/tr?id=246893812899528&ev=PageView&noscript=1"
         <div class="loc-line">Manifest Yoga Studio, Lagoon Drive</div>
         <p>Combining two powerful practices to recalibrate the nervous system: long-held, passive floor stretches with an immersive meditative sound experience. Beginner-friendly, and spaces are limited.</p>
         <span class="btn btn-forest" style="align-self:flex-start;">Book now</span>
+      </div>
+    </a>
+
+    <a class="event-feature ef-landscape" data-ends="2026-11-20T00:00:00+02:00" href="https://www.brcixopo.co.za/eventdetail/1311/awaken-the-feminine-a-weekend-of-rest-ritual-and-reconnection.html" target="_blank" rel="noopener" style="text-decoration:none;">
+      <div class="event-thumb">
+        <div class="cat-tag cat-retreat">Retreat</div>
+        <img src="assets/event-awaken-feminine.jpg" width="1000" height="787" loading="lazy" decoding="async" alt="Awaken the Feminine retreat, 20 to 22 November 2026, Buddhist Retreat Centre, Ixopo">
+      </div>
+      <div class="event-body">
+        <div class="event-when">Fri 20 – Sun 22 November 2026</div>
+        <h3>Awaken the Feminine: <em>A weekend of rest, ritual &amp; reconnection</em></h3>
+        <div class="loc-line">The Buddhist Retreat Centre, Ixopo · with Margarita Celeste &amp; Magdarie van Staden</div>
+        <p>Through astrology, yoga and feminine embodiment, this retreat invites mothers and daughters, sisters, friends and solo journeyers to rise together in sacred sisterhood. Bookings and enquiries directly with BRC.</p>
+        <span class="btn btn-forest" style="align-self:flex-start;">More info</span>
       </div>
     </a>
 
